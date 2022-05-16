@@ -1,0 +1,38 @@
+<div class="navtabs-container">
+    <nav mat-tab-nav-bar>
+    <span class="toolbar-flex"></span>  
+    <a mat-tab-link routerLink="/"
+        routerLinkActive #home="routerLinkActive"
+        [active]="home.isActive">
+        Avaleht
+    </a>
+
+    <a mat-tab-link routerLink="/hinnakiri"
+        routerLinkActive #hinnakiri="routerLinkActive"
+        [active]="hinnakiri.isActive">
+        Hinnakiri
+    </a>
+
+    <a mat-tab-link routerLink="/"
+        routerLinkActive #home="routerLinkActive"
+        [active]="home.isActive">
+        Menüü
+    </a>
+
+    <a mat-tab-link routerLink="/"
+        routerLinkActive #home="routerLinkActive"
+        [active]="home.isActive">
+        Galerii
+    </a>
+
+    <a mat-tab-link routerLink="/"
+        routerLinkActive #home="routerLinkActive"
+        [active]="home.isActive">
+        Asukoht
+    </a>  
+    
+    <span class="toolbar-flex"></span>
+    </nav>    
+</div>
+
+

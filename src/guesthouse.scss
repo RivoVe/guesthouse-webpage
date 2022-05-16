@@ -1,0 +1,13 @@
+@use '@angular/material/theming';
+
+@include mat.core();
+
+$guesthouse-primary: mat-palette($mat-Light Green, 300);
+$guesthouse-accent: mat-palette($mat-Lime, 500);
+
+$guesthouse-warn: mat-palette($mat-red);
+
+$guesthouse: mat-light-theme($guesthouse-primary, $guesthouse-accent, $guesthouse-warn);
+
+
+@include angular-material-theme($guesthouse);
