@@ -9,14 +9,19 @@ import { Booking } from 'src/app/models/booking';
 export class CreateBookingComponent implements OnInit {
 
   booking: Booking = {
-  
+
     arrivalDate:'',
     leavingDate:'',
     numberOfPeople:'',
     name:'',
     email:'',
-    phoneNumber:''
-    
+    phoneNumber:'',
+    rooms:'',
+    meals:'',
+    extras:'',
+    totalPrice:'',
+    paymentMethod:''
+
   }
 
   constructor() { }
@@ -25,3 +30,6 @@ export class CreateBookingComponent implements OnInit {
   }
 
 }
+
+
+

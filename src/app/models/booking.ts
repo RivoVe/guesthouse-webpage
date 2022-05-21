@@ -7,8 +7,14 @@ export class Booking {
   name?:any;
   email?:any;
   phoneNumber?:any;
-
-// what about foregin key variables? how do i add those? do i need to add all?
-//I dont want customer to be able to set all variables, some of them should come automatically
+  rooms?:any;
+  meals?:any;
+  extras?:any;
+  totalPrice?:any;
+  paymentMethod?:any;
+  user?:any;
+  isBookingConfirmed?:any;
+  isActive?:any;
+  isPaid?:any;
 
 }
