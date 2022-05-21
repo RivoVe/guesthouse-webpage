@@ -21,6 +21,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
+import { CreateBookingComponent } from './create-booking/create-booking.component';
+
+
 
 
 
@@ -37,7 +40,9 @@ import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
     HeaderComponent,
     NavtabsComponent,
     SidenavListComponent,
-    HinnakiriComponent
+    HinnakiriComponent,
+    CreateBookingComponent
+
   ],
   imports: [
     BrowserModule,
