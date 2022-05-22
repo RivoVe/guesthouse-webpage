@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +23,11 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { RoomListComponent } from './components/room-list/room-list.component';
+
+
 
 
 
@@ -37,7 +44,10 @@ import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
     HeaderComponent,
     NavtabsComponent,
     SidenavListComponent,
-    HinnakiriComponent
+    HinnakiriComponent,
+    AddRoomComponent,
+    RoomDetailsComponent,
+    RoomListComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +58,9 @@ import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
     MatSliderModule,
     MatSidenavModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

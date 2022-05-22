@@ -1,6 +1,8 @@
 .container{
     height: 100vh;
     background: url(/assets/images/matsu2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .book-now-container{
@@ -13,3 +15,4 @@ color: white;
 border: 1px solid white;
 text-transform: uppercase;
 }
+

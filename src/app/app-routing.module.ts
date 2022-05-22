@@ -6,15 +6,21 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { FoodBevarageComponent } from './food-bevarage/food-bevarage.component';
 import { HomeComponent } from './home/home.component';
 import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
+import { RoomListComponent } from './components/room-list/room-list.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
 
 
 const routes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'accomodation', component: AccomodationComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'food-beverage', component: FoodBevarageComponent },
   { path: 'hinnakiri', component: HinnakiriComponent },
-  { path: '', component: HomeComponent}
+  { path: 'rooms', component: RoomListComponent },
+  { path: 'rooms/:id', component: RoomDetailsComponent },
+  { path: 'rooms/add', component: AddRoomComponent }  
 ];
 
 @NgModule({
