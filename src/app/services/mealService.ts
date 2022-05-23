@@ -12,8 +12,8 @@ export class MealService{
 constructor(private http: HttpClient) { }
 
   //method to find meal by id
-  createMeal(meal: Meal): {
-    return this.http.post<Meal>(baseUrl, meal);
+  createMeal(data: any): Observable<any> {
+    return this.http.post(baseUrl, data);
   }
 
   //method to find meal by id
