@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Booking } from 'src/app/models/booking';
+import { BookingService } from '../services/bookingService';
 
 @Component({
   selector: 'app-create-booking',
@@ -8,27 +9,14 @@ import { Booking } from 'src/app/models/booking';
 })
 export class CreateBookingComponent implements OnInit {
 
-  booking: Booking = {
 
-    arrivalDate:'',
-    leavingDate:'',
-    numberOfPeople:'',
-    name:'',
-    email:'',
-    phoneNumber:'',
-    rooms:'',
-    meals:'',
-    extras:'',
-    totalPrice:'',
-    paymentMethod:''
-
-  }
-
-  constructor() { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit(): void {
+
   }
 
+  createBooking(booking: Booking): void{}
 }
 
 

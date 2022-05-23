@@ -1,4 +1,4 @@
-
+<div class="overall">
 <form action="reservation.php" method="post">
   <h1>UUS BRONEERING</h1>
   <div class="elem-group">
@@ -19,12 +19,12 @@
   <hr>
   <div class="elem-group inlined">
     <label for="arrivalDate">Check-in Date</label>
-    <input type="date" id="arrivalDate" name="checkin" required>
+    <input type="date" id="arrivalDate" name="arrivalDate" required>
   </div>
 
   <div class="elem-group inlined">
     <label for="leavingDate">Check-out Date</label>
-    <input type="date" id="leavingDate" name="checkout" required>
+    <input type="date" id="leavingDate" name="leavingDate" required>
   </div>
 
   <div class="elem-group inlined">
@@ -105,7 +105,7 @@
     </div>
 
     <div>
-      <input type="radio" id="Payment when leaving" name="Payment" value="Payment beforehand" >
+      <input type="radio" id="Payment when leaving" name="Payment" value="Payment when leaving" checked>
       <label for="Payment when leaving">Payment when leaving</label>
     </div>
 
@@ -113,10 +113,11 @@
 
   <hr>
   <div class="elem-group">
-    <label for="message">Anything Else we should know?</label>
+    <label for="message">Anything else we should know?</label>
     <textarea id="message" name="visitor_message" placeholder="For Example: I have allergy for nuts, I need extra blanket..."></textarea>
   </div>
 
-  <button class="button" type="submit">Send Booking!</button>
+  <button class="button" type="submit" onclick="createBooking">SEND BOOKING!</button>
 </form>
 <hr>
+</div>
