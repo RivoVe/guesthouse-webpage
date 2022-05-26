@@ -6,7 +6,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { FoodBevarageComponent } from './food-bevarage/food-bevarage.component';
 import { HomeComponent } from './home/home.component';
 import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
-import { CreateBookingComponent } from './create-booking/create-booking.component';
+import { CreateBookingComponent } from './booking/create-booking/create-booking.component';
 import { AddMealComponent } from './meal/add-meal/add-meal.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'meal', component: AddMealComponent},
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
-  { path: 'rooms/add', component: AddRoomComponent }  
+  { path: 'rooms/add', component: AddRoomComponent }
 
 ];
 

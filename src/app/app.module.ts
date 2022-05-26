@@ -26,7 +26,6 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
-import { CreateBookingComponent } from './create-booking/create-booking.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -37,6 +36,7 @@ import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
+import { CreateBookingComponent } from './booking/create-booking/create-booking.component';
 
 
 
@@ -57,10 +57,10 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     HinnakiriComponent,
     AddMealComponent,
     DeleteMealComponent,
-    CreateBookingComponent,
     AddRoomComponent,
     RoomDetailsComponent,
-    RoomListComponent
+    RoomListComponent,
+    CreateBookingComponent
 
   ],
   imports: [
