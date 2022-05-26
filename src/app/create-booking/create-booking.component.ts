@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Booking } from 'src/app/models/booking';
-import { BookingService } from '../services/bookingService';
+import { Booking } from '../shared/models/booking';
+import { BookingService } from '../shared/services/bookingService';
 
 @Component({
   selector: 'app-create-booking',

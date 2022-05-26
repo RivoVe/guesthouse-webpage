@@ -29,6 +29,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { AddMealComponent } from './meal/add-meal/add-meal.component';
+import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavtabsComponent,
     SidenavListComponent,
     HinnakiriComponent,
+    AddMealComponent,
+    DeleteMealComponent,
     CreateBookingComponent
 
   ],
