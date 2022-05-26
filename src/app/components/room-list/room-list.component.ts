@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Room } from 'src/app/models/room.model';
-import { RoomService } from 'src/app/services/room.service';
+import { Room } from 'src/app/shared/models/room.model';
+import { RoomService } from 'src/app/shared/services/room.service';
 
 @Component({
   selector: 'app-room-list',
@@ -53,6 +53,6 @@ export class RoomListComponent implements OnInit {
     });
   }
 
-  
+
 
 }

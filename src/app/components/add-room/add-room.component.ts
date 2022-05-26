@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Room } from 'src/app/models/room.model';
-import { RoomService } from 'src/app/services/room.service';
+import { Room } from 'src/app/shared/models/room.model';
+import { RoomService } from 'src/app/shared/services/room.service';
 
 @Component({
   selector: 'app-add-room',
@@ -20,8 +20,8 @@ export class AddRoomComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }  
-  
+  }
+
   saveRoom(): void{
     const data = {
       name: this.room.name,
@@ -35,7 +35,7 @@ export class AddRoomComponent implements OnInit {
         this.submitted = true;
       },
       error: (e) => console.error(e)
-    });  
+    });
   }
 
   newRoom(): void {

@@ -40,6 +40,7 @@ import { RoomListComponent } from './components/room-list/room-list.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,10 +77,10 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatListModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatListModule
 
     ],
   providers: [],
