@@ -1,6 +1,8 @@
+//siin saab menüükomponente lisada
+
 <div class="navtabs-container">
     <nav mat-tab-nav-bar>
-    <span class="toolbar-flex"></span>  
+    <span class="toolbar-flex"></span>
     <a mat-tab-link routerLink="/"
         routerLinkActive #home="routerLinkActive"
         [active]="home.isActive">
@@ -13,10 +15,10 @@
         Rooms
     </a>
 
-    <a mat-tab-link routerLink="/"
+    <a mat-tab-link routerLink="/meal"
         routerLinkActive #home="routerLinkActive"
         [active]="home.isActive">
-        Menüü
+        Menüü | Meal
     </a>
 
     <a mat-tab-link routerLink="/"
@@ -29,10 +31,16 @@
         routerLinkActive #home="routerLinkActive"
         [active]="home.isActive">
         Asukoht
-    </a>  
-    
+    </a>
+
+    <a mat-tab-link routerLink="/booking"
+      routerLinkActive #home="routerLinkActive"
+      [active]="home.isActive">
+      Broneeri
+    </a>
+
     <span class="toolbar-flex"></span>
-    </nav>    
+    </nav>
 </div>
 
 

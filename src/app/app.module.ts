@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {} from '@angular/compiler';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,11 +26,17 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HinnakiriComponent } from './hinnakiri/hinnakiri.component';
+import { CreateBookingComponent } from './create-booking/create-booking.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
+import { AddMealComponent } from './meal/add-meal/add-meal.component';
+import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { RoomListComponent } from './components/room-list/room-list.component';
-
-
 
 
 
@@ -45,9 +54,13 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     NavtabsComponent,
     SidenavListComponent,
     HinnakiriComponent,
+    AddMealComponent,
+    DeleteMealComponent,
+    CreateBookingComponent,
     AddRoomComponent,
     RoomDetailsComponent,
     RoomListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -59,8 +72,15 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     MatSidenavModule,
     MatToolbarModule,
     FlexLayoutModule,
-    FormsModule,
-    HttpClientModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatListModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+
     ],
   providers: [],
   bootstrap: [AppComponent]
