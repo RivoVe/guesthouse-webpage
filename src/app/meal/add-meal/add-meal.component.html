@@ -1,1 +1,44 @@
-<p>add-meal works!</p>
+<div class="overall">
+    <h1>ADD MEAL</h1>
+
+    <div class="elem-group">
+      <label for="name">Meal name</label>
+      <input required type="text" id="name" name="name" placeholder="Mari Matsu" pattern=[A-Z\sa-z]{3,20}>
+    </div>
+
+    <div class="elem-group">
+      <label for="description">Description</label>
+      <textarea type="text" id="description" name="description" placeholder="Enter Description"></textarea>
+    </div>
+
+    <div class="elem-group">
+      <label for="price">Meal price</label>
+      <input type="number" id="price" name="price" placeholder="Enter Price" pattern=[0-9]{1,5} required>
+    </div>
+
+    <div class="elem-group">
+      <label for="listOfMealTypes">Select meal type:</label>
+      <select id="listOfMealTypes" name="listOfMealTypes" value="meal type">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+      </select>
+    </div>
+
+    <div class="elem-group">
+      <legend>Is meal Active?</legend>
+      <div>
+        <input type="radio" id="true" name="isActive" value="true" checked>
+        <label for="true">Is Active</label>
+      </div>
+      <div>
+        <input type="radio" id="false" name="isActive" value="false">
+        <label for="false">Is NOT Active</label>
+      </div>
+    </div>
+
+    <div class="elem-group">
+    <button class="button" type="submit" onclick="">Create!</button>
+    </div>
+</div>
+
