@@ -4,6 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {} from '@angular/compiler';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +34,9 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { AddMealComponent } from './meal/add-meal/add-meal.component';
 import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { RoomListComponent } from './components/room-list/room-list.component';
 
 
 
@@ -51,8 +56,10 @@ import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
     HinnakiriComponent,
     AddMealComponent,
     DeleteMealComponent,
-    CreateBookingComponent
-
+    CreateBookingComponent,
+    AddRoomComponent,
+    RoomDetailsComponent,
+    RoomListComponent
 
   ],
   imports: [
@@ -71,7 +78,9 @@ import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
     MatNativeDateModule,
     MatListModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
+
     ],
   providers: [],
   bootstrap: [AppComponent]
