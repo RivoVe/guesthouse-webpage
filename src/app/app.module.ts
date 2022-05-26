@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {} from '@angular/compiler';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { AddMealComponent } from './meal/add-meal/add-meal.component';
 import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,7 @@ import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
     DeleteMealComponent,
     CreateBookingComponent
 
+
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
