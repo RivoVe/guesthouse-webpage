@@ -1,16 +1,29 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentRoom.id">
-    <h4>Tutorial</h4>
+    <div class="roomdet" > 
+    <h1 >{{ currentRoom.name }}</h1>
     <div>
       <label><strong>Name:</strong></label> {{ currentRoom.name }}
     </div>
     <div>
       <label><strong>Description:</strong></label>
-      {{ currentRoom.name }}
+      {{ currentRoom.description }}
     </div>
     <div>
-      <label><strong>Type:</strong></label>
-      {{ currentRoom.name }}
+      <label><strong>Room Type:</strong></label>
+      {{ currentRoom.roomType }}
+    </div>
+    <div>
+      <label><strong>Price:</strong></label>
+      {{ currentRoom.price }}
+    </div>
+    <div>
+      <label><strong>Images:</strong></label>
+      {{ currentRoom.roomImages }}
+    </div>
+    <div>
+      <label><strong>Is Active:</strong></label>
+      {{ currentRoom.active }}
     </div>
 
     <a
@@ -19,6 +32,16 @@
     >
       Edit
     </a>
+
+    <button class="m-3 btn btn-sm btn-danger" (click) ="inActiveRoom( currentRoom.id )">
+      Inactive
+    </button>
+
+    <!-- <button class="m-3 btn btn-sm btn-danger" (click) ="activeRoom()">
+      Anactive
+    </button> -->
+
+    </div>
   </div>
 
   <div *ngIf="!currentRoom">
@@ -62,9 +85,9 @@
         </div>
       </form>
               
-      <button class="badge badge-danger mr-2" (click)="deleteRoom()">
+      <!-- <button class="badge badge-danger mr-2" (click)="inActiveRoom()">
         Delete
-      </button>
+      </button> -->
   
       <button
         type="submit"

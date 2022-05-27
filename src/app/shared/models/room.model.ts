@@ -1,10 +1,10 @@
 export class Room {
-    id?: any;
+    id?: number;
     name?: string;
-    description?: any;
-    roomType?: any;
-    price?: any;
-    roomImages?: any;
-    active?: any;
+    description?: string;
+    roomType?: string;
+    price?: number;
+    roomImages?: string;
+    active?: boolean;
 
 }

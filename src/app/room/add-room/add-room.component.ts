@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { RoomService } from 'src/app/shared/services/room.service';
+
+const baseUrl = 'http://localhost:4200/addRoom'
 
 @Component({
   selector: 'app-add-room',
@@ -8,6 +10,7 @@ import { RoomService } from 'src/app/shared/services/room.service';
   styleUrls: ['./add-room.component.scss']
 })
 export class AddRoomComponent implements OnInit {
+  roomTypes: string[] = ['APARTMENT', 'SINGLE_ROOM', 'DOUBLE_ROOM', 'SUMMER_HOUSE'];
   addRoomForm: FormGroup;
   
 
@@ -32,6 +35,11 @@ export class AddRoomComponent implements OnInit {
     })
   }
 
-  
+  selectRoomType(event:any): void {
+    this.addRoomForm.patchValue({
+      listOfRoomTypes: event.target.value
+    })
+  }
+
 
 }

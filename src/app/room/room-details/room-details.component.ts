@@ -14,9 +14,9 @@ export class RoomDetailsComponent implements OnInit {
     name: '',
     description: '',
     roomType: '',
-    price: '',
+    price: null,
     roomImages: '',
-    active: ''
+    active: null
   }
 
   message = '';
@@ -61,9 +61,9 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  deleteRoom(): void{
+  inActiveRoom(id: any): void{
     this.message = '';
-    this.roomService.delete(this.currentRoom.id)
+    this.roomService.delete(id)
     .subscribe(
       {
       next: (res) => {
@@ -74,6 +74,20 @@ export class RoomDetailsComponent implements OnInit {
     }
     );
   }
+
+  // activeRoom(): void{
+  //   this.message = '';
+  //   this.roomService.restore(this.currentRoom.id)
+  //   .subscribe(
+  //     {
+  //     next: (res) => {
+  //       console.log(res);
+  //       this.router.navigate(['/rooms']);
+  //     },
+  //     error: (e) => console.error(e)
+  //   }
+  //   );
+  // }
 
 }
 
