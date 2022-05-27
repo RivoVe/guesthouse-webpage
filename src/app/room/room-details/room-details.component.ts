@@ -61,33 +61,34 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  inActiveRoom(id: any): void{
+  inActiveRoom(): void{
     this.message = '';
-    this.roomService.delete(id)
+    this.roomService.delete(this.currentRoom.id)
     .subscribe(
       {
       next: (res) => {
         console.log(res);
-        this.router.navigate(['/rooms']);
+        this.message = res.message ? res.message:'The room was updated';
       },
       error: (e) => console.error(e)
     }
     );
   }
 
-  // activeRoom(): void{
-  //   this.message = '';
-  //   this.roomService.restore(this.currentRoom.id)
-  //   .subscribe(
-  //     {
-  //     next: (res) => {
-  //       console.log(res);
-  //       this.router.navigate(['/rooms']);
-  //     },
-  //     error: (e) => console.error(e)
-  //   }
-  //   );
-  // }
+  
+    activeRoom(): void{
+      this.message = '';
+      this.roomService.restore(this.currentRoom.id)
+      .subscribe(
+        {
+        next: (res) => {
+          console.log(res);
+          this.router.navigate(['/rooms']);
+        },
+        error: (e) => console.error(e)
+      }
+      );
+    }
 
 }
 

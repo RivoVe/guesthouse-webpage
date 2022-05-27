@@ -35,11 +35,11 @@ export class RoomService {
   }
 
   delete(id: any): Observable<any>{
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get(`${baseUrl}/delete/${id}`);
   }
 
   restore(id: any): Observable<any>{
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get(`${baseUrl}/restore/${id}`);
   }
 
   deleteAll(): Observable<any>{

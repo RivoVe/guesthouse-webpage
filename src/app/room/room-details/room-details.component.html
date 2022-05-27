@@ -26,20 +26,18 @@
       {{ currentRoom.active }}
     </div>
 
-    <a
-      class="badge badge-warning"
-      routerLink="/rooms/{{ currentRoom.id }}"
-    >
+  
+    <button class="nupp1" routerLink="/rooms/{{ currentRoom.id }}">
       Edit
-    </a>
+    </button>
 
-    <button class="m-3 btn btn-sm btn-danger" (click) ="inActiveRoom( currentRoom.id )">
+    <button class="nupp1" (click) ="inActiveRoom()">
       Inactive
     </button>
 
-    <!-- <button class="m-3 btn btn-sm btn-danger" (click) ="activeRoom()">
-      Anactive
-    </button> -->
+    <button class="nupp1" (click) ="activeRoom()">
+      Active
+    </button>
 
     </div>
   </div>
