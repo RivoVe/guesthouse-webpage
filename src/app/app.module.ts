@@ -33,7 +33,7 @@ import { AddRoomComponent } from './room/add-room/add-room.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { CreateBookingComponent } from './booking/create-booking/create-booking.component';
-
+import { MealListComponent } from './meal/meal-list/meal-list.component';
 
 
 
@@ -52,7 +52,8 @@ import { CreateBookingComponent } from './booking/create-booking/create-booking.
     AddRoomComponent,
     RoomDetailsComponent,
     RoomListComponent,
-    CreateBookingComponent
+    CreateBookingComponent,
+    MealListComponent
 
   ],
   imports: [
