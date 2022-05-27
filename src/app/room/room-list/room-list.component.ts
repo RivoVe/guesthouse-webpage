@@ -13,7 +13,6 @@ export class RoomListComponent implements OnInit {
   currentIndex = -1;
   name = '';
 
-
   constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
@@ -52,7 +51,6 @@ export class RoomListComponent implements OnInit {
       error: e => console.error(e)
     });
   }
-
 
 
 }

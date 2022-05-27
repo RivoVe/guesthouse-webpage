@@ -1,8 +1,10 @@
 export class Room {
     id?: any;
-    isActive?: any;
     name?: string;
+    description?: any;
+    roomType?: any;
     price?: any;
-    guestHouseId?: any;
+    roomImages?: any;
+    active?: any;
 
 }

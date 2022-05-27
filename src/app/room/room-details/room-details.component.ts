@@ -11,11 +11,12 @@ import { RoomService } from 'src/app/shared/services/room.service';
 export class RoomDetailsComponent implements OnInit {
   @Input() viewMode = false;
   @Input() currentRoom: Room = {
-   
     name: '',
+    description: '',
+    roomType: '',
     price: '',
-  
-
+    roomImages: '',
+    active: ''
   }
 
   message = '';
@@ -75,3 +76,4 @@ export class RoomDetailsComponent implements OnInit {
   }
 
 }
+

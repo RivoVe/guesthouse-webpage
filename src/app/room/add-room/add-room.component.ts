@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Room } from 'src/app/shared/models/room.model';
+import { FormControl, FormGroup } from '@angular/forms';
 import { RoomService } from 'src/app/shared/services/room.service';
 
 @Component({
@@ -8,42 +8,30 @@ import { RoomService } from 'src/app/shared/services/room.service';
   styleUrls: ['./add-room.component.scss']
 })
 export class AddRoomComponent implements OnInit {
-
-  room: Room = {
-    name: '',
-    price: '',
-  };
-
-  submitted = false;
+  addRoomForm: FormGroup;
+  
 
   constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
+    this.addRoomForm = new FormGroup({
+      id: new FormControl(),
+      name: new FormControl(),
+      description: new FormControl(),
+      roomType: new FormControl(),
+      price: new FormControl(),
+      roomImages: new FormControl(),
+      active: new FormControl()      
+    })
 
   }
 
-  saveRoom(): void{
-    const data = {
-      name: this.room.name,
-      price: this.room.price
-    };
-
-    this.roomService.create(data)
-    .subscribe({
-      next: (res) => {
-        console.log(res);
-        this.submitted = true;
-      },
-      error: (e) => console.error(e)
-    });
+  onSubmit(): void {
+    this.roomService.createRoom(this.addRoomForm.value).subscribe(() => {
+      this.addRoomForm.reset();
+    })
   }
 
-  newRoom(): void {
-      this.submitted = false;
-      this.room = {
-        name: '',
-        price: ''
-      }
-    };
+  
 
 }

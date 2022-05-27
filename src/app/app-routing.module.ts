@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'meals', component: AddMealComponent},
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
-  { path: 'rooms/add', component: AddRoomComponent }
+  { path: 'addRoom', component: AddRoomComponent }
 
 ];
 

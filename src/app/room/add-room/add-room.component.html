@@ -1,27 +1,33 @@
-<div>
-    <div class="submit-form">
-      <div *ngIf="!submitted">
+<div class="container">
+  <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()" class="form-signin">
+     <h2 >Add Room</h2>
+      <div id="data">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="title" required [(ngModel)]="room.name" 
-          name="name"/>
+          <label for="room-name">Room name</label>
+          <input type="text" id="room-name" class="form-control" formControlName="name">
+          </div>
+          <div class="form-group">
+          <label for="description">Description</label>
+          <input id="description" class="form-control" formControlName="description">
+          </div>
+          <div class="form-group">
+          <label for="price">Price</label>
+          <input id="price" class="form-control" formControlName="price">
+          </div>
+          <div class="form-group">
+          <label for="roomImages">Room Images</label>
+          <input id="roomImages" class="form-control" formControlName="roomImages">
+          </div>
         </div>
         <div class="form-group">
-          <label for="name">RoomType</label>
-          <input class="form-control" id="name" required [(ngModel)]="room.name"
-            name="name" />
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input class="form-control" id="price" required [(ngModel)]="room.price"
-              name="price" />
-        </div>
-
-        <button (click)="saveRoom()" class="btn btn-success">Submit</button>
-      </div>
-      <div *ngIf="submitted">
-        <h4>Tutorial was submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newRoom()">Add</button>
-      </div>
-    </div>
-  </div>
+          <label for="">Room Type</label>
+          <select id="roomType" class="form-control" formControlName="roomType">
+          <option value="APARTMENT">Apartment</option>
+          <option value="SINGLE_ROOM">Single Room</option>
+          <option value="DOUBLE_ROOM">Double Room</option>
+          <option value="SUMMER_HOUSE">Summer House</option>
+        </select>
+      </div>       
+      <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Submit</button>
+    </form>
+</div>
