@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'hinnakiri', component: HinnakiriComponent },
   { path: '', component: HomeComponent},
   { path: 'booking', component: CreateBookingComponent},
-  { path: 'meal', component: AddMealComponent},
+  { path: 'meals', component: AddMealComponent},
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
   { path: 'rooms/add', component: AddRoomComponent }

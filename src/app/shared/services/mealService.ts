@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Meal } from '../models/meal';
 
-const baseUrl = 'http://localhost:4200/meal'
+const baseUrl = 'http://localhost:8080/meals'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,10 @@ constructor(private http: HttpClient) { }
 
   //method to find meal by id
   createMeal(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post(baseUrl, data, {
+      headers:new HttpHeaders()
+      .set('Content-Type', 'application/json')
+    });
   }
 
   //method to find meal by id

@@ -1,51 +1,46 @@
 <div class="overall">
-    <h1>ADD MEAL</h1>
-  <form [formGroup]="addMealForm" (ngSubmit)="onSubmit()">
-    <div class="elem-group">
-      <label for="name">Meal name</label>
-      <input required type="text" formControlName="name" id="name"
-      placeholder="Meal name" pattern=[A-Z\sa-z]{3,20}>
-    </div>
+  <h1>ADD MEAL</h1>
+<form [formGroup]="addMealForm" (ngSubmit)="onSubmit()">
+  <div class="elem-group">
+    <label for="name">Meal name</label>
+    <input required type="text" formControlName="name" id="name"
+    placeholder="Meal name" pattern=[A-Z\sa-z]{3,20}>
+  </div>
 
-    <div class="elem-group">
-      <label for="description">Description</label>
-      <textarea type="text" formControlName="description"
-      id="description" placeholder="Enter Description"></textarea>
-    </div>
+  <div class="elem-group">
+    <label for="description">Description</label>
+    <textarea type="text" formControlName="description"
+    id="description" placeholder="Enter Description"></textarea>
+  </div>
 
-    <div class="elem-group">
-      <label for="price">Meal price</label>
-      <input required type="number" formControlName="price" id="price"
-      placeholder="Enter Price" pattern=[0-9]{1,5}>
-    </div>
+  <div class="elem-group">
+    <label for="price">Meal price</label>
+    <input required type="number" formControlName="price" id="price"
+    placeholder="Enter Price" pattern=[0-9]{1,5}>
+  </div>
 
-    <div class="elem-group">
-      <label for="listOfMealTypes">Select meal type:</label>
-      <select formControlName="listOfMealTypes"
-      (change)="selectMealType($event)" id="listOfMealTypes">
-          <option *ngFor="let mtp of mealTypes" [ngValue]="mtp">{{mtp}}
-          </option>
-      </select>
-    </div>
-
-    <div class="elem-group">
-      <legend>Is meal Active?</legend>
-      <div formGroupName="isActive">
-
-        <label>
-          <input formControlName="active" type="radio">Is Active
-        </label>
-        <label>
-          <input formControlName="notActive" type="radio">Is NOT Active
-        </label>
-
-
-      </div>
-    </div>
-
-    <div class="elem-group">
-    <button class="button" type="submit" (click)="onSubmit">Create!</button>
-    </div>
-  </form>
+  <div class="form-group">
+    <label for="meal-type">Website:</label>
+    <select formControlName="mealType" class="form-control">
+        <option disabled>Select Meal Type</option>
+        <option *ngFor="let mtp of mealTypes">{{mtp | uppercase}}</option>
+    </select>
 </div>
 
+  <div class="elem-group">
+    <legend>Is meal Active?</legend>
+    <div>
+      <input id="active" type="radio" value="true" formControlName="isActive">
+      <label for="active">Active</label>
+   </div>
+   <div>
+      <input id="inactive" type="radio" value="false" formControlName="isActive">
+      <label for="inactive">Inactive</label>
+   </div>
+  </div>
+
+  <div class="elem-group">
+  <button class="button" type="submit">Create!</button>
+  </div>
+</form>
+</div>

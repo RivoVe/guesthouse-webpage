@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { MealService } from 'src/app/shared/services/mealService';
 
+
+const baseUrl = 'http://localhost:4200/meals'
 
 @Component({
   selector: 'app-add-meal',
@@ -11,7 +14,7 @@ export class AddMealComponent implements OnInit {
   mealTypes: string[] = ['Breakfast', 'Lunch', 'Dinner'];
   addMealForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private service: MealService) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -23,17 +26,19 @@ export class AddMealComponent implements OnInit {
       name: '',
       description: '',
       price: '',
-      listOfMealTypes: '',
-      isActive: this.formBuilder.group({
-        active: true,
-        notActive: false
-      })
+      mealType: '',
+      isActive: null
     });
   }
 
   onSubmit(): void {
-    console.log(this.addMealForm);
+    console.log(this.addMealForm.value);
+    this.service.createMeal(this.addMealForm.value).subscribe(res => {
+      console.log(res);
+    })
   }
+
+
 
   selectMealType(event:any): void {
     this.addMealForm.patchValue({
