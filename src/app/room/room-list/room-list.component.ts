@@ -42,7 +42,7 @@ export class RoomListComponent implements OnInit {
   }
 
   removeAllRooms(): void {
-    this.roomService.deleteAll()
+    this.roomService.deleteRoom(this.currentRoom.id)
     .subscribe({
       next: (res) =>{
         console.log(res);

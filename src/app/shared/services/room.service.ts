@@ -30,8 +30,8 @@ export class RoomService {
     return this.http.post(baseUrl, room);
   }
  
-  update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+  update(room: Room): Observable<any> {
+    return this.http.put<Room>(baseUrl, room);
   }
 
   delete(id: any): Observable<any>{
@@ -42,8 +42,8 @@ export class RoomService {
     return this.http.get(`${baseUrl}/restore/${id}`);
   }
 
-  deleteAll(): Observable<any>{
-    return this.http.delete(baseUrl);
+  deleteRoom(id:any): Observable<any>{
+    return this.http.get(`${baseUrl}/full-delete/${id}`);
   }
 
 }

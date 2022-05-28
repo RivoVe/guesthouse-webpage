@@ -20,6 +20,7 @@ export class RoomDetailsComponent implements OnInit {
   }
 
   message = '';
+  
 
   constructor(
     private roomService: RoomService,
@@ -49,7 +50,7 @@ export class RoomDetailsComponent implements OnInit {
 
   updateRoom(): void{
     this.message = '';
-    this.roomService.update(this.currentRoom.id, this.currentRoom)
+    this.roomService.update(this.currentRoom)
     .subscribe(
       {
       next: (res) => {
@@ -89,6 +90,22 @@ export class RoomDetailsComponent implements OnInit {
       }
       );
     }
+
+    deleteRoom(): void{
+      this.message = '';
+      this.roomService.deleteRoom(this.currentRoom.id)
+      .subscribe(
+        {
+        next: (res) => {
+          console.log(res);
+          this.message = res.message ? res.message:'The room was updated';
+        },
+        error: (e) => console.error(e)
+      }
+      );
+    }
+
+        
 
 }
 
