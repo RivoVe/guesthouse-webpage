@@ -19,6 +19,12 @@
         Menüü | Meal
     </a>
 
+    <a mat-tab-link routerLink="/extras"
+        routerLinkActive #home="routerLinkActive"
+        [active]="home.isActive">
+        Extras
+    </a>
+
     <a mat-tab-link routerLink="/"
         routerLinkActive #home="routerLinkActive"
         [active]="home.isActive">

@@ -26,7 +26,6 @@ export class AddRoomComponent implements OnInit {
       roomImages: new FormControl(),
       active: new FormControl()
     })
-
   }
 
   onSubmit(): void {

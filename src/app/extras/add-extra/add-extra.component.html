@@ -1,1 +1,32 @@
-<p>add-extra works!</p>
+<div class="overall">
+    <h1>Add Extra</h1>
+  <form [formGroup]="addExtrasForm" (ngSubmit)="onSubmit()">
+    <div class="elem-group">
+      <label for="extra-name">Extra name</label>
+      <input required type="text" formControlName="name" id="extra-name"
+      placeholder="Extra name" pattern=[A-Z\sa-z]{3,20}>
+    </div>
+  
+    <div class="elem-group">
+      <label for="description">Description</label>
+      <textarea type="text" formControlName="description"
+      id="description" placeholder="Enter Description"></textarea>
+    </div>
+  
+    <div class="elem-group">
+      <label for="price">Extra price</label>
+      <input required type="number" formControlName="price" id="price"
+      placeholder="Enter Price" pattern=[0-9]{1,5}>
+    </div>
+  
+    <div class="elem-group">
+      <label for="extrasImages">Extra Image</label>
+      <input required type="text" formControlName="extrasImages"
+      id="extrasImages" placeholder="Enter Extra Image">
+    </div> 
+    
+    <div class="elem-group">
+    <button class="button" type="submit">Create!</button>
+    </div>
+  </form>
+  </div>
