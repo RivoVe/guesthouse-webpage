@@ -11,8 +11,8 @@ const baseUrl = 'http://localhost:4200/addRoom'
 })
 export class AddRoomComponent implements OnInit {
   roomTypes: string[] = ['APARTMENT', 'SINGLE_ROOM', 'DOUBLE_ROOM', 'SUMMER_HOUSE'];
-  addRoomForm: FormGroup;
-  
+  addRoomForm!: FormGroup;
+
 
   constructor(private roomService: RoomService) { }
 
@@ -24,7 +24,7 @@ export class AddRoomComponent implements OnInit {
       roomType: new FormControl(),
       price: new FormControl(),
       roomImages: new FormControl(),
-      active: new FormControl()      
+      active: new FormControl()
     })
 
   }

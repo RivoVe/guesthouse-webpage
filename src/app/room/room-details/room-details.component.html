@@ -1,6 +1,6 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentRoom.id">
-    <div class="roomdet" > 
+    <div class="roomdet" >
     <h1 >{{ currentRoom.name }}</h1>
     <div>
       <label><strong>Name:</strong></label> {{ currentRoom.name }}
@@ -28,21 +28,23 @@
 
   
     <button class="nupp1" routerLink="/updateRoom">
+
+    <button class="nupp1" routerLink="/rooms/{{ currentRoom.id }}">
       Update
     </button>
 
-    <button class="nupp1" (click) ="inActiveRoom()">
+    <button class="nupp1" (click) ="inActiveRoom()" onclick="window.location.reload();">
       Inactive
     </button>
 
-    <button class="nupp1" (click) ="activeRoom()">
+    <button class="nupp1" (click) ="activeRoom()" onclick="window.location.reload();">
       Active
     </button>
-  
+
     <button class="nupp1" (click) ="deleteRoom()">
       Delete
     </button>
-   
+
     </div>
   </div>
 
@@ -86,11 +88,11 @@
           />
         </div>
       </form>
-              
+
       <!-- <button class="badge badge-danger mr-2" (click)="inActiveRoom()">
         Delete
       </button> -->
-  
+
       <button
         type="submit"
         class="badge badge-success mb-2"
@@ -100,7 +102,7 @@
       </button>
       <p>{{ message }}</p>
     </div>
-  
+
     <div *ngIf="!currentRoom.id">
       <br />
       <p>viga Room detailis...</p>

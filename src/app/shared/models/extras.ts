@@ -1,12 +1,12 @@
 import { ExtrasImages } from "./extrasImage";
 
 export class Extras {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  isActive: boolean;
-  extrasImages: ExtrasImages[];
+  id?: number;
+  name?: string;
+  description?: string;
+  price?: number;
+  isActive?: boolean;
+  extrasImages?: ExtrasImages[];
 
   constructor(id: number, name: string, description: string,
     price: number, isActive: boolean,

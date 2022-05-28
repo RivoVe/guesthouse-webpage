@@ -1,33 +1,26 @@
-div.overall {
-    margin: auto;
-    max-width: 1050px;
-    background-color: whitesmoke;
-  
-  }
-  
-  body {
+ body {
     width: 500px;
     margin: 0 auto;
     padding: 50px;
   }
-  
+
   div.elem-group {
     margin: 20px 0;
   }
-  
+
   div.elem-group.inlined {
     width: 49%;
     display: inline-block;
     margin-left: 1%;
   }
-  
+
   label, legend {
     display: block;
     font-family: 'Nanum Gothic';
     padding-bottom: 10px;
     font-size: 1.25em;
   }
-  
+
   input, select, textarea {
     border-radius: 2px;
     border: 2px solid #777;
@@ -37,20 +30,20 @@ div.overall {
     width: 100%;
     padding: 10px;
   }
-  
+
   div.elem-group.inlined input {
     width: 95%;
     display: inline-block;
   }
-  
+
   textarea {
     height: 250px;
   }
-  
+
   hr {
     border: 1px dotted #ccc;
   }
-  
+
   button {
     height: 50px;
     background: green;
@@ -62,8 +55,8 @@ div.overall {
     cursor: pointer;
     margin-left: 500px;
   }
-  
+
   button:hover {
     border: 2px solid black;
   }
-  
+

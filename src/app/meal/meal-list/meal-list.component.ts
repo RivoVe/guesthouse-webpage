@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { Meal } from 'src/app/shared/models/meal';
 import { MealService } from 'src/app/shared/services/mealService';
 
@@ -12,8 +12,10 @@ import { MealService } from 'src/app/shared/services/mealService';
 })
 export class MealListComponent implements OnInit {
 meals!:Meal[];
+closeResult!: string;
 
-  constructor(private mealService: MealService) {
+  constructor(private mealService: MealService,
+    private modalService: NgbModal) {
 
   }
 
@@ -31,5 +33,6 @@ meals!:Meal[];
       error: e => console.error(e)
     });
   }
+
 
 }
