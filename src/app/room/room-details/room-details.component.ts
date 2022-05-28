@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/shared/models/room.model';
 import { RoomService } from 'src/app/shared/services/room.service';
 
+
 @Component({
   selector: 'app-room-details',
   templateUrl: './room-details.component.html',
