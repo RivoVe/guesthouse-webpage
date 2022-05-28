@@ -1,6 +1,6 @@
 <div class="overall">
   <h1>Update Room</h1>
-<form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="updateRoomForm" (ngSubmit)="onSubmit()">
   <div class="elem-group">
     <label for="room-name">Room name</label>
     <input required type="text" formControlName="name" id="room-name"
@@ -33,7 +33,7 @@
     </select>
 </div>
 
-  
+
   <div class="elem-group">
   <button class="button" type="submit">Create!</button>
   </div>

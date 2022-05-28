@@ -12,31 +12,31 @@ const baseUrl = 'http://localhost:4200/updateRoom'
 })
 export class UpdateRoomComponent implements OnInit {
   roomTypes: string[] = ['APARTMENT', 'SINGLE_ROOM', 'DOUBLE_ROOM', 'SUMMER_HOUSE'];
-  addRoomForm: FormGroup;
-  
+  updateRoomForm!: FormGroup;
+
 
   constructor(private roomService: RoomService) { }
 
   ngOnInit(): void {
-    this.addRoomForm = new FormGroup({
+    this.updateRoomForm = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
       description: new FormControl(),
       roomType: new FormControl(),
       price: new FormControl(),
       roomImages: new FormControl(),
-      active: new FormControl()      
+      active: new FormControl()
     })
   }
 
   onSubmit(): void {
-    this.roomService.updateRoom(this.addRoomForm.value).subscribe(() => {
-      this.addRoomForm.reset();
+    this.roomService.updateRoom(this.updateRoomForm.value).subscribe(() => {
+      this.updateRoomForm.reset();
     })
   }
 
   selectRoomType(event:any): void {
-    this.addRoomForm.patchValue({
+    this.updateRoomForm.patchValue({
       listOfRoomTypes: event.target.value
     })
   }
