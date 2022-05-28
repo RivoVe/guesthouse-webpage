@@ -27,8 +27,8 @@
     </div>
 
 
-    <button class="nupp1" routerLink="/rooms/{{currentRoom.id}}">
-      Edit
+    <button class="nupp1" routerLink="/rooms/{{ currentRoom.id }}">
+      Update
     </button>
 
     <button class="nupp1" (click) ="inActiveRoom()" onclick="window.location.reload();">
@@ -37,6 +37,10 @@
 
     <button class="nupp1" (click) ="activeRoom()" onclick="window.location.reload();">
       Active
+    </button>
+
+    <button class="nupp1" (click) ="deleteRoom()">
+      Delete
     </button>
 
     </div>

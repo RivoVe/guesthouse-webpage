@@ -9,6 +9,7 @@ import { RoomDetailsComponent } from './room/room-details/room-details.component
 import { AddRoomComponent } from './room/add-room/add-room.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { MealListComponent } from './meal/meal-list/meal-list.component';
+import { UpdateRoomComponent } from './room/update-room/update-room.component';
 
 
 
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'meals/add', component: AddMealComponent},
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
-  { path: 'addRoom', component: AddRoomComponent }
+  { path: 'addRoom', component: AddRoomComponent },
+  { path: 'updateRoom', component: UpdateRoomComponent }
+
 
 ];
 
