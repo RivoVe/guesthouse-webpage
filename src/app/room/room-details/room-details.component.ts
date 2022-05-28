@@ -50,20 +50,7 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  updateRoom(): void{
-    this.message = '';
-    this.roomService.update(this.currentRoom)
-    .subscribe(
-      {
-      next: (res) => {
-        console.log(res);
-        this.message = res.message ? res.message:'The room was updated';
-      },
-      error: (e) => console.error(e)
-    }
-    );
-  }
-
+  
   inActiveRoom(): void{
     this.message = '';
     this.roomService.delete(this.currentRoom.id)
@@ -100,7 +87,7 @@ export class RoomDetailsComponent implements OnInit {
         {
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message:'The room was updated';
+          this.message = res.message ? res.message:'The room was deleted';
         },
         error: (e) => console.error(e)
       }

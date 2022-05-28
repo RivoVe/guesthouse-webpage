@@ -37,6 +37,10 @@ import { MealListComponent } from './meal/meal-list/meal-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { UpdateRoomComponent } from './room/update-room/update-room.component';
+import { AddExtraComponent } from './extras/add-extra/add-extra.component';
+import { UpdateExtraComponent } from './extras/update-extra/update-extra.component';
+import { ExtraDetailsComponent } from './extras/extra-details/extra-details.component';
+import { ExtraListComponent } from './extras/extra-list/extra-list.component';
 
 
 
@@ -57,7 +61,12 @@ import { UpdateRoomComponent } from './room/update-room/update-room.component';
     RoomListComponent,
     CreateBookingComponent,
     MealListComponent,
-    UpdateRoomComponent
+    UpdateRoomComponent,
+    AddExtraComponent,
+    UpdateExtraComponent,
+    ExtraDetailsComponent,
+    ExtraListComponent,
+    
 
   ],
   imports: [
