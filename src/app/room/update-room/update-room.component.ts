@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from 'src/app/shared/services/room.service';
 
 
-const baseUrl = 'http://localhost:4200/rooms/:id'
+const baseUrl = 'http://localhost:4200/update/:id'
 
 @Component({
   selector: 'app-update-room',
