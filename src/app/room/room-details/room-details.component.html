@@ -1,4 +1,4 @@
-<div *ngIf="viewMode; else editable">
+<div *ngIf="viewMode">
   <div *ngIf="currentRoom.id">
     <div class="roomdet" >
     <h1 >{{ currentRoom.name }}</h1>
@@ -26,10 +26,8 @@
       {{ currentRoom.active }}
     </div>
 
-  
-    <button class="nupp1" routerLink="/updateRoom">
 
-    <button class="nupp1" routerLink="/rooms/{{ currentRoom.id }}">
+     <button class="nupp1" routerLink="/updateRoom">
       Update
     </button>
 
@@ -48,64 +46,6 @@
     </div>
   </div>
 
-  <div *ngIf="!currentRoom">
-    <br />
-    <p>Please click on a Room...</p>
-  </div>
-</div>
-<ng-template #editable>
-  <div *ngIf="currentRoom.id" class="edit-form">
-    <h4>Room</h4>
-    <form>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          [(ngModel)]="currentRoom.name"
-          name="name"
-        />
-      </div>
-      <div class="form-group">
-        <label for="name">Type</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          [(ngModel)]="currentRoom.name"
-          name="name"
-        />
-      </div>
-      <div class="form-group">
-          <label for="price">Price</label>
-          <input
-            type="text"
-            class="form-control"
-            id="price"
-            [(ngModel)]="currentRoom.price"
-            name="price"
-          />
-        </div>
-      </form>
+ </div>
 
-      <!-- <button class="badge badge-danger mr-2" (click)="inActiveRoom()">
-        Delete
-      </button> -->
-
-      <button
-        type="submit"
-        class="badge badge-success mb-2"
-        (click)="updateRoom()"
-      >
-        Update
-      </button>
-      <p>{{ message }}</p>
-    </div>
-
-    <div *ngIf="!currentRoom.id">
-      <br />
-      <p>viga Room detailis...</p>
-    </div>
-  </ng-template>
 

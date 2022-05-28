@@ -44,5 +44,9 @@ export class RoomService {
     return this.http.get(`${baseUrl}/full-delete/${id}`);
   }
 
+  updateRoom(room: Room): Observable<unknown> {
+    return this.http.put(baseUrl, room);
+  }
+
 }
 

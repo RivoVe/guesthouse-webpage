@@ -13,6 +13,7 @@ const baseUrl = 'http://localhost:4200/updateRoom'
 export class UpdateRoomComponent implements OnInit {
   roomTypes: string[] = ['APARTMENT', 'SINGLE_ROOM', 'DOUBLE_ROOM', 'SUMMER_HOUSE'];
   addRoomForm: FormGroup;
+  
 
   constructor(private roomService: RoomService) { }
 
@@ -29,7 +30,7 @@ export class UpdateRoomComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.roomService.createRoom(this.addRoomForm.value).subscribe(() => {
+    this.roomService.updateRoom(this.addRoomForm.value).subscribe(() => {
       this.addRoomForm.reset();
     })
   }
