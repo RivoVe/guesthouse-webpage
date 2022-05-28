@@ -4,6 +4,12 @@
     padding: 50px;
   }
 
+  div.center-all{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
   div.elem-group {
     margin: 20px 0;
   }
@@ -37,7 +43,7 @@
   }
 
   textarea {
-    height: 250px;
+    height: 150px;
   }
 
   hr {
@@ -53,7 +59,7 @@
     font-family: 'Nanum Gothic';
     border-radius: 9px;
     cursor: pointer;
-    margin-left: 500px;
+    justify-content: center;
   }
 
   button:hover {
