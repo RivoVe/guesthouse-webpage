@@ -1,6 +1,7 @@
-<div class="overall">
+<div class="center-all">
+  <div class="elem-group inlined">
   <h1>Update Room</h1>
-<form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="updateRoomForm" (ngSubmit)="onSubmit()">
   <div class="elem-group">
     <label for="room-name">Room name</label>
     <input required type="text" formControlName="name" id="room-name"
@@ -28,14 +29,14 @@
   <div class="form-group">
     <label for="room-type">Room Type:</label>
     <select formControlName="roomType" class="form-control">
-        <option disabled>Select Meal Type</option>
+        <option disabled></option>
         <option *ngFor="let mtp of roomTypes">{{mtp | uppercase}}</option>
     </select>
 </div>
 
-  
+
   <div class="elem-group">
-  <button class="button" type="submit">Create!</button>
+  <button class="button" type="submit">UPDATE!</button>
   </div>
 </form>
 </div>

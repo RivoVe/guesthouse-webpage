@@ -1,4 +1,6 @@
-<div class="overall">
+
+<div class="center-all">
+<div class="elem-group inlined">
   <h1>Add Room</h1>
 <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()">
   <div class="elem-group">
@@ -31,11 +33,12 @@
         <option disabled>Select Meal Type</option>
         <option *ngFor="let mtp of roomTypes">{{mtp | uppercase}}</option>
     </select>
-</div>
+  </div>
 
-  
   <div class="elem-group">
-  <button class="button" type="submit">Create!</button>
+    <button class="button" type="submit">Create!
+    </button>
   </div>
 </form>
+</div>
 </div>

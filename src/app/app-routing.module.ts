@@ -27,11 +27,15 @@ const routes: Routes = [
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
   { path: 'addRoom', component: AddRoomComponent },
+<<<<<<< HEAD
   { path: 'updateRoom', component: UpdateRoomComponent },
   { path: 'extras', component: ExtraListComponent },
   { path: 'extras/:id', component: ExtraDetailsComponent },
   { path: 'addExtra', component: AddExtraComponent },
   { path: 'updateExtra', component: UpdateExtraComponent }
+=======
+  { path: 'updateRoom/:id', component: UpdateRoomComponent }
+>>>>>>> e69298462c7ed6d33be3ac2ba1628b3f7501adfa
 
 
 ];

@@ -24,6 +24,13 @@ export class RoomService {
     return this.http.post(baseUrl, room);
   }
 
+<<<<<<< HEAD
+=======
+  updateRoom(room: Room): Observable<unknown> {
+    return this.http.put(baseUrl, room);
+  }
+
+>>>>>>> e69298462c7ed6d33be3ac2ba1628b3f7501adfa
   delete(id: any): Observable<any>{
     return this.http.get(`${baseUrl}/delete/${id}`);
   }
@@ -36,9 +43,7 @@ export class RoomService {
     return this.http.get(`${baseUrl}/full-delete/${id}`);
   }
 
-  updateRoom(room: Room): Observable<unknown> {
-    return this.http.put(baseUrl, room);
-  }
+
 
 }
 

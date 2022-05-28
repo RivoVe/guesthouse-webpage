@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { RoomService } from 'src/app/shared/services/room.service';
+import { Router } from '@angular/router';
 
 const baseUrl = 'http://localhost:4200/addRoom'
 
@@ -14,7 +15,7 @@ export class AddRoomComponent implements OnInit {
   addRoomForm!: FormGroup;
 
 
-  constructor(private roomService: RoomService) { }
+  constructor(private roomService: RoomService, private router: Router) { }
 
   ngOnInit(): void {
     this.addRoomForm = new FormGroup({
@@ -31,6 +32,7 @@ export class AddRoomComponent implements OnInit {
   onSubmit(): void {
     this.roomService.createRoom(this.addRoomForm.value).subscribe(() => {
       this.addRoomForm.reset();
+      this.router.navigateByUrl('/rooms');
     })
   }
 
@@ -39,6 +41,8 @@ export class AddRoomComponent implements OnInit {
       listOfRoomTypes: event.target.value
     })
   }
+
+
 
 
 }
