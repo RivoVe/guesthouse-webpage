@@ -50,9 +50,7 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-<<<<<<< HEAD
   
-=======
   /*updateRoom(): void{
     this.message = '';
     this.roomService.updateRoom(this.currentRoom)
@@ -67,7 +65,6 @@ export class RoomDetailsComponent implements OnInit {
   }
   */
 
->>>>>>> e69298462c7ed6d33be3ac2ba1628b3f7501adfa
   inActiveRoom(): void{
     this.message = '';
     this.roomService.delete(this.currentRoom.id)
