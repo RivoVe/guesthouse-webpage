@@ -21,8 +21,8 @@ export class RoomDetailsComponent implements OnInit {
     active: true
   }
 
-  message = '';
-  
+  message? = '';
+
 
   constructor(
     private roomService: RoomService,
@@ -50,19 +50,19 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  updateRoom(): void{
+  /*updateRoom(): void{
     this.message = '';
-    this.roomService.update(this.currentRoom)
+    this.roomService.updateRoom(this.currentRoom)
     .subscribe(
       {
       next: (res) => {
         console.log(res);
-        this.message = res.message ? res.message:'The room was updated';
       },
       error: (e) => console.error(e)
     }
     );
   }
+  */
 
   inActiveRoom(): void{
     this.message = '';
@@ -107,7 +107,7 @@ export class RoomDetailsComponent implements OnInit {
       );
     }
 
-        
+
 
 }
 

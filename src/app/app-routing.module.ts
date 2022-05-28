@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
   { path: 'addRoom', component: AddRoomComponent },
-  { path: 'updateRoom', component: UpdateRoomComponent }
+  { path: 'updateRoom/:id', component: UpdateRoomComponent }
 
 
 ];

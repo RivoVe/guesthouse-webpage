@@ -27,9 +27,7 @@
     </div>
 
 
-     <button class="nupp1" routerLink="/updateRoom">
-      Update
-    </button>
+    <button class="nupp1" routerLink="/updateRoom/:id">Update</button>
 
     <button class="nupp1" (click) ="inActiveRoom()" onclick="window.location.reload();">
       Inactive
@@ -39,7 +37,7 @@
       Active
     </button>
 
-    <button class="nupp1" (click) ="deleteRoom()"  onclick="window.location.reload();">
+    <button class="nupp1" (click) ="deleteRoom()" onclick="window.location.reload();">
       Delete
     </button>
 
