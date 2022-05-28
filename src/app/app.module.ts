@@ -34,6 +34,7 @@ import { RoomDetailsComponent } from './room/room-details/room-details.component
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { CreateBookingComponent } from './booking/create-booking/create-booking.component';
 import { MealListComponent } from './meal/meal-list/meal-list.component';
+import { UpdateRoomComponent } from './room/update-room/update-room.component';
 
 
 
@@ -53,7 +54,8 @@ import { MealListComponent } from './meal/meal-list/meal-list.component';
     RoomDetailsComponent,
     RoomListComponent,
     CreateBookingComponent,
-    MealListComponent
+    MealListComponent,
+    UpdateRoomComponent
 
   ],
   imports: [
