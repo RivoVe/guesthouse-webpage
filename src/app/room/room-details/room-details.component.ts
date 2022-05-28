@@ -11,12 +11,13 @@ import { RoomService } from 'src/app/shared/services/room.service';
 export class RoomDetailsComponent implements OnInit {
   @Input() viewMode = false;
   @Input() currentRoom: Room = {
+    id: 0,
     name: '',
     description: '',
     roomType: '',
-    price: null,
+    price: 0,
     roomImages: '',
-    active: null
+    active: true
   }
 
   message = '';
@@ -75,7 +76,7 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  
+
     activeRoom(): void{
       this.message = '';
       this.roomService.restore(this.currentRoom.id)

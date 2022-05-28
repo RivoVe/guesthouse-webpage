@@ -10,15 +10,13 @@ const baseUrl = 'http://localhost:8080/rooms'
 })
 export class RoomService {
 
-  
-
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Room[]>{
     return this.http.get<Room[]>(baseUrl);
   }
 
-  get(id: any): Observable<Room>{
+  get(id: any): Observable<any>{
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -29,7 +27,7 @@ export class RoomService {
   createRoom(room: Room): Observable<unknown> {
     return this.http.post(baseUrl, room);
   }
- 
+
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }

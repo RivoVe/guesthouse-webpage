@@ -1,10 +1,10 @@
 export class User {
-  id:number;
-  name:string;
-  phoneNumber:string;
-  email:string;
-  registrationDate:Date;
-  isActive:boolean;
+  id?:number;
+  name?:string;
+  phoneNumber?:string;
+  email?:string;
+  registrationDate?:Date;
+  isActive?:boolean;
 
   constructor(id:number, name:string, phoneNumber:string,
     email: string, registrationDate: Date, isActive:boolean){

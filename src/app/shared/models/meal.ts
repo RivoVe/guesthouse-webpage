@@ -1,13 +1,13 @@
 import { MealImage } from "./mealImage";
 
 export class Meal{
-  id:number;
-  name:string;
-  description:string;
-  price:number;
-  isActive:boolean;
-  mealType:string;
-  mealImages:MealImage[];
+  id?:number;
+  name?:string;
+  description?:string;
+  price?:number;
+  isActive?:boolean;
+  mealType?:string;
+  mealImages?:MealImage[];
 
   constructor(id:number, name:string, description:string,
     price: number, isActive:boolean, mealType:string,

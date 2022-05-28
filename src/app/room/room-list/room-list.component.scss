@@ -1,6 +1,6 @@
 .list {
   text-align: left;
-  
+
   max-width: 1050px;
   margin: auto;
   background-color: rgb(163, 241, 163);
@@ -23,4 +23,53 @@
 border: 2px solid black;
 background-color: rgb(207, 191, 191);
 }
-  
+
+div.overall {
+  margin: auto;
+  max-width: 1050px;
+  background-color: whitesmoke;
+
+}
+
+body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+

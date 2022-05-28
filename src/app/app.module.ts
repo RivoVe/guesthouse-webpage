@@ -34,6 +34,8 @@ import { RoomDetailsComponent } from './room/room-details/room-details.component
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { CreateBookingComponent } from './booking/create-booking/create-booking.component';
 import { MealListComponent } from './meal/meal-list/meal-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 
 
@@ -73,7 +75,8 @@ import { MealListComponent } from './meal/meal-list/meal-list.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatListModule
+    MatListModule,
+    NgbModule
 
     ],
   providers: [],

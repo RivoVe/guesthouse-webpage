@@ -3,23 +3,23 @@ import { User } from "./user";
 import { Meal } from "./meal";
 
 export class Booking {
-  id:number;
-  arrivalDate:Date;
-  leavingDate:Date;
-  numberOfPeople:number;
-  name:string;
-  email:string;
-  phoneNumber:string;
-  rooms:any;
-  meals: Meal[];
-  extras:Extras[];
-  totalPrice:number;
-  paymentMethod:string;
-  comments:string;
-  user:User[];
-  isConfirmed:boolean;
-  isActive:boolean;
-  isPaid:boolean;
+  id?:number;
+  arrivalDate?:Date;
+  leavingDate?:Date;
+  numberOfPeople?:number;
+  name?:string;
+  email?:string;
+  phoneNumber?:string;
+  rooms?:any;
+  meals?: Meal[];
+  extras?:Extras[];
+  totalPrice?:number;
+  paymentMethod?:string;
+  comments?:string;
+  user?:User[];
+  isConfirmed?:boolean;
+  isActive?:boolean;
+  isPaid?:boolean;
 
   constructor(id: number, arrivalDate: Date, leavingDate: Date,
     numberOfPeople: number, name: string, email: string, phoneNumber: string,
