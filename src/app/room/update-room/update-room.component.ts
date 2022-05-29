@@ -29,12 +29,13 @@ export class UpdateRoomComponent implements OnInit {
       roomImages: new FormControl(),
       active: new FormControl()
     });
-    this.getRoom(this.route.snapshot.params["id"]);
+
+    this.route.params.subscribe(params => this.getRoom(params["id"]));
+
   }
 
   onSubmit(): void {
     this.roomService.updateRoom(this.updateRoomForm.value).subscribe(() => {
-      this.updateRoomForm.reset();
       this.router.navigateByUrl('/rooms');
     })
   }
@@ -50,7 +51,8 @@ export class UpdateRoomComponent implements OnInit {
     .subscribe(
       {
         next: (res) => {
-          this.updateRoomForm.setValue({
+          console.log(res);
+          this.updateRoomForm.patchValue({
             id: res.id,
             name: res.name,
             description: res.description,
@@ -59,7 +61,10 @@ export class UpdateRoomComponent implements OnInit {
             roomImages: res.roomImages,
             active: res.active
           });
-          console.log(res);
+
+
+        console.log(this.updateRoomForm);
+
         } ,
         error: (e) => console.error(e)
       }
