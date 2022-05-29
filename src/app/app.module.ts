@@ -69,7 +69,7 @@ import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
     ExtraDetailsComponent,
     ExtraListComponent,
     MealDetailsComponent,
-    UpdateMealComponent,
+    UpdateMealComponent
 
   ],
   imports: [

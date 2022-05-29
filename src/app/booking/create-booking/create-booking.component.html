@@ -37,7 +37,7 @@
     <label>Select room(s)</label>
     <select formControlName="rooms" class="form-control" multiple>
       <option disabled></option>
-      <option *ngFor="let r of rooms" [ngValue]="r">
+      <option *ngFor="let r of rooms">
         {{r}}
       </option>
   </select>
@@ -48,7 +48,7 @@
   <label>Select meal(s)</label>
   <select formControlName="meals" class="form-control">
     <option disabled></option>
-    <option *ngFor="let m of meals"[ngValue]="m">
+    <option *ngFor="let m of meals">
       {{m}}</option>
 </select>
 </div>
@@ -57,7 +57,7 @@
   <label>Select extra(s)</label>
   <select formControlName="extras" class="form-control" muliple>
     <option disabled></option>
-    <option *ngFor="let e of extras" [ngValue]="e">
+    <option *ngFor="let e of extras">
       {{e}}
     </option>
 </select>
