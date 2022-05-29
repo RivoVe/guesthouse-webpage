@@ -14,6 +14,8 @@ import { ExtraListComponent } from './extras/extra-list/extra-list.component';
 import { ExtraDetailsComponent } from './extras/extra-details/extra-details.component';
 import { AddExtraComponent } from './extras/add-extra/add-extra.component';
 import { UpdateExtraComponent } from './extras/update-extra/update-extra.component';
+import { MealDetailsComponent } from './meal/meal-details/meal-details.component';
+import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
 
 
 
@@ -22,17 +24,23 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'booking', component: CreateBookingComponent},
+
   { path: 'meals', component: MealListComponent},
-  { path: 'meals/add', component: AddMealComponent},
+  { path: 'meals/:id', component: MealDetailsComponent },
+  { path: 'addMeal', component: AddMealComponent},
+  { path: 'updateMeal', component: UpdateMealComponent },
+
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
   { path: 'addRoom', component: AddRoomComponent },
   { path: 'updateRoom', component: UpdateRoomComponent },
+  { path: 'updateRoom/:id', component: UpdateRoomComponent },
+
   { path: 'extras', component: ExtraListComponent },
   { path: 'extras/:id', component: ExtraDetailsComponent },
   { path: 'addExtra', component: AddExtraComponent },
   { path: 'updateExtra', component: UpdateExtraComponent },
-  { path: 'updateRoom/:id', component: UpdateRoomComponent }
+  
 
 
 ];

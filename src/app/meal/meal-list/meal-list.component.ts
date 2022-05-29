@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { Meal } from 'src/app/shared/models/meal';
 import { MealService } from 'src/app/shared/services/mealService';
-
-
 
 @Component({
   selector: 'app-meal-list',
@@ -11,20 +8,19 @@ import { MealService } from 'src/app/shared/services/mealService';
   styleUrls: ['./meal-list.component.scss']
 })
 export class MealListComponent implements OnInit {
-meals!:Meal[];
-closeResult!: string;
+  meals?: Meal[];
+  currentMeal: Meal = {};
+  currentIndex = -1;
+  name = '';
 
-  constructor(private mealService: MealService,
-    private modalService: NgbModal) {
-
-  }
+  constructor(private mealService: MealService) { }
 
   ngOnInit(): void {
     this.retrieveMeals();
   }
 
   retrieveMeals(): void{
-    this.mealService.getAllMeals()
+    this.mealService.getAll()
     .subscribe({
       next: (res) => {
         this.meals = res;
@@ -32,6 +28,17 @@ closeResult!: string;
       },
       error: e => console.error(e)
     });
+  }
+
+  refreshList(): void {
+    this.retrieveMeals();
+    this.currentMeal = {};
+    this.currentIndex = -1;
+  }
+
+  setActiveMeal(meal: Meal, index: number): void {
+    this.currentMeal = meal;
+    this.currentIndex = index;
   }
 
 

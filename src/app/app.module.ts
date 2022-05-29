@@ -29,7 +29,6 @@ import { MatListModule } from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { AddMealComponent } from './meal/add-meal/add-meal.component';
-import { DeleteMealComponent } from './meal/delete-meal/delete-meal.component';
 import { AddRoomComponent } from './room/add-room/add-room.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
@@ -42,6 +41,8 @@ import { AddExtraComponent } from './extras/add-extra/add-extra.component';
 import { UpdateExtraComponent } from './extras/update-extra/update-extra.component';
 import { ExtraDetailsComponent } from './extras/extra-details/extra-details.component';
 import { ExtraListComponent } from './extras/extra-list/extra-list.component';
+import { MealDetailsComponent } from './meal/meal-details/meal-details.component';
+import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
 
 
 
@@ -57,7 +58,6 @@ import { ExtraListComponent } from './extras/extra-list/extra-list.component';
     NavtabsComponent,
     SidenavListComponent,
     AddMealComponent,
-    DeleteMealComponent,
     AddRoomComponent,
     RoomDetailsComponent,
     RoomListComponent,
@@ -68,7 +68,8 @@ import { ExtraListComponent } from './extras/extra-list/extra-list.component';
     UpdateExtraComponent,
     ExtraDetailsComponent,
     ExtraListComponent,
-    
+    MealDetailsComponent,
+    UpdateMealComponent,
 
   ],
   imports: [
