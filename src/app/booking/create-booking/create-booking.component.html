@@ -35,33 +35,38 @@
 
   <div class="elem-group inlined">
     <label>Select room(s)</label>
-    <select formControlName="rooms" class="form-control" multiple>
+    <select formControlName="rooms" [(ngModel)]="roomSelected" class="form-control" multiple>
       <option disabled></option>
-      <option *ngFor="let r of rooms">
-        {{r}}
+      <option *ngFor="let r of rooms" value="{{r}}">
+        {{ r.name }}
       </option>
   </select>
+  <br>
+  selected value is {{roomSelected}}
 </div>
 
 
 <div class="elem-group inlined">
   <label>Select meal(s)</label>
-  <select formControlName="meals" class="form-control">
+  <select formControlName="meals" [(ngModel)]="mealsSelected"  class="form-control" multiple>
     <option disabled></option>
-    <option *ngFor="let m of meals">
-      {{m}}</option>
+    <option *ngFor="let m of meals" value="{{m}}">
+      {{m.name}}</option>
 </select>
 </div>
 
 <div class="elem-group inlined">
   <label>Select extra(s)</label>
-  <select formControlName="extras" class="form-control" muliple>
+  <select formControlName="extras" [(ngModel)]="extrasSelected" class="form-control" multiple>
     <option disabled></option>
-    <option *ngFor="let e of extras">
-      {{e}}
+    <option *ngFor="let e of extras" value="{{e}}">
+      {{e.name}}
     </option>
 </select>
 </div>
+<br>
+<br>
+
 <hr>
 
 <div class="elem-group">
@@ -77,7 +82,18 @@
     <textarea id="comments" name="comments" placeholder="For Example: I have allergy for nuts, I need extra blanket..."></textarea>
   </div>
 
-  <button class="button" type="submit" onclick="createBooking">SEND BOOKING!</button>
+  <div class="elem-group">
+    <legend>Is booking Active?</legend>
+    <div>
+      <input id="active" type="radio" value="true" formControlName="isActive">
+      <label for="active">Active</label>
+   </div>
+   <div>
+      <input id="inactive" type="radio" value="false" formControlName="isActive">
+      <label for="inactive">Inactive</label>
+   </div>
+  </div>
+
+  <button class="button" type="submit">SEND BOOKING!</button>
 </form>
-<hr>
 </div>

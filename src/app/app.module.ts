@@ -43,6 +43,8 @@ import { ExtraDetailsComponent } from './extras/extra-details/extra-details.comp
 import { ExtraListComponent } from './extras/extra-list/extra-list.component';
 import { MealDetailsComponent } from './meal/meal-details/meal-details.component';
 import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
+import { BookingListComponent } from './booking/booking-list/booking-list.component';
+import { BookingDetailsComponent } from './booking/booking-details/booking-details.component';
 
 
 
@@ -69,7 +71,9 @@ import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
     ExtraDetailsComponent,
     ExtraListComponent,
     MealDetailsComponent,
-    UpdateMealComponent
+    UpdateMealComponent,
+    BookingListComponent,
+    BookingDetailsComponent
 
   ],
   imports: [

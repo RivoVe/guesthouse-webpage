@@ -17,8 +17,8 @@ export class BookingService {
     return this.http.post(baseUrl, data);
   }
   //method to find booking by id
-  findBookingById(id: any): Observable<Booking[]>{
-    return this.http.get<Booking[]>(`${baseUrl}?id=${id}`);
+  findBookingById(id: any): Observable<any>{
+    return this.http.get(`${baseUrl}?id=${id}`);
   }
 
   //method to update booking
@@ -36,6 +36,14 @@ export class BookingService {
     return this.http.get<Booking[]>(baseUrl);
   }
 
+  inActivate(id: any): Observable<any>{
+    return this.http.get(`${baseUrl}/delete/${id}`);
+  }
+
+  restore(id: any): Observable<any>{
+    return this.http.get(`${baseUrl}/restore/${id}`);
+  }
+
   //get all active bookings method
 
   //get all confirmed bookings
@@ -43,10 +51,5 @@ export class BookingService {
   //calculate total amount of booking method
 
 
-
-  //not using those right now
-  //method to "delete" booking by booking id - set active false so no one can see the booking
-
-  //method to restore booking
 
 }
