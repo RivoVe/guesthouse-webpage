@@ -94,6 +94,33 @@
    </div>
   </div>
 
+  <div class="elem-group">
+    <legend>Is booking Paid?</legend>
+    <div>
+      <input id="Paid" type="radio" value="true" formControlName="isPaid">
+      <label for="Paid">Yes</label>
+   </div>
+   <div>
+      <input id="NotPaid" type="radio" value="false" formControlName="isPaid">
+      <label for="NotPaid">No</label>
+   </div>
+  </div>
+
+
+  <div class="elem-group">
+    <legend>Is booking Confirmed?</legend>
+    <div>
+      <input id="active" type="radio" value="true" formControlName="isConfirmed">
+      <label for="active">Yes</label>
+   </div>
+   <div>
+      <input id="inactive" type="radio" value="false" formControlName="isConfirmed">
+      <label for="inactive">No</label>
+   </div>
+  </div>
+
+
+
   <button class="button" type="submit">SEND BOOKING!</button>
 </form>
 </div>
