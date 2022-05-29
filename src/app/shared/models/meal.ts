@@ -5,18 +5,18 @@ export class Meal{
   name?:string;
   description?:string;
   price?:number;
-  isActive?:boolean;
+  active?:boolean;
   mealType?:string;
   mealImages?:MealImage[];
 
   constructor(id:number, name:string, description:string,
-    price: number, isActive:boolean, mealType:string,
+    price: number, active:boolean, mealType:string,
      mealImages: MealImage[]){
       this.id=id;
       this.name=name;
       this.description=description;
       this.price=price;
-      this.isActive=isActive;
+      this.active=active;
       this.mealType=mealType;
       this.mealImages=mealImages;
     }

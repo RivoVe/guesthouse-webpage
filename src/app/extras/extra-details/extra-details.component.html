@@ -1,0 +1,48 @@
+<div *ngIf="viewMode">
+    <div *ngIf="currentExtras.id">
+      <div class="roomdet" >
+      <h1 >{{ currentExtras.name }}</h1>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentExtras.name }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentExtras.description }}
+      </div>
+      <div>
+        <label><strong>Price:</strong></label>
+        {{ currentExtras.price }}
+      </div>
+      <div>
+        <label><strong>Images:</strong></label>
+        {{ currentExtras.extrasImages }}
+      </div>
+      <div>
+        <label><strong>Is Active:</strong></label>
+        {{ currentExtras.active }}
+      </div>
+  
+    
+       <button class="nupp1" routerLink="/updateRoom">
+        Update
+      </button>
+  
+      <button class="nupp1" (click) ="inActiveExtra()" onclick="window.location.reload();">
+        Inactive
+      </button>
+  
+      <button class="nupp1" (click) ="activeExtra()" onclick="window.location.reload();">
+        Active
+      </button>
+  
+      <button class="nupp1" (click) ="deleteExtra()" onclick="window.location.reload();">
+        Delete
+      </button>
+  
+      </div>
+    </div>
+  
+   </div>
+   
+  
+  

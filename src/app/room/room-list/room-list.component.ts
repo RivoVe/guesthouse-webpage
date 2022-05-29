@@ -41,16 +41,5 @@ export class RoomListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeAllRooms(): void {
-    this.roomService.deleteRoom(this.currentRoom.id)
-    .subscribe({
-      next: (res) =>{
-        console.log(res);
-        this.refreshList();
-      },
-      error: e => console.error(e)
-    });
-  }
-
 
 }

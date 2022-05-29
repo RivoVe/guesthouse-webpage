@@ -1,0 +1,41 @@
+<div class="list">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input type="text"
+          class="form-control"
+          placeholder="Search by name"
+          [(ngModel)]="name"/>
+        <div class="input-group-append">
+          <button class="nupp1" type="button">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="elem-group">
+      <button class="nupp1"  routerLink ="/addExtra">Add Extra
+      </button>
+    </div>
+  
+    <h1>Extras List:</h1>
+    <div class="col-md-6 col-md-8 elem-group inlined">
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let extras of extrass; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveExtras(extras, i)">
+            {{ extras.name }}
+          </li>
+        </ul>
+      </div>
+  
+    <div class="col-md-6 elem-group inlined">
+        <app-extra-details
+          [viewMode]="true"
+          [currentExtras]="currentExtras"
+        ></app-extra-details>
+      </div>
+    </div>
+  

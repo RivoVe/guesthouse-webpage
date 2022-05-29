@@ -1,53 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+<div class="list">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="name"/>
 
-<div class="container">
-
-  <h1>List of meals:</h1>
-  <div class="border">
-    <button class="btn btn-md btn-outline-primary">
-      <i class="fa fa-user"></i>New Meal</button>
+      <div class="input-group-append">
+        <button class="nupp1" type="button"> Search </button>
+      </div>
+    </div>
   </div>
 
-  <table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>Meal name</th>
-      <th>Description</th>
-      <th>Price €</th>
-      <th>isActive</th>
-      <th>Mealtype</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let meal of meals">
-      <td><span>{{meal.id}}</span></td>
-      <td><span>{{meal.name}}</span></td>
-      <td><span>{{meal.description}}</span></td>
-      <td><span>{{meal.price}}</span></td>
-      <td><span>{{meal.isActive}}</span></td>
-      <td><span>{{meal.mealType}}</span></td>
-      <td>
-        <button class="btn btn-sm btn-info">
-          <i class="fa fa-search"></i>Details</button>
-        <button class="btn btn-sm btn-warning">
-          <i class="fa fa-edit"></i>Edit</button>
-        <button class="btn btn-sm btn-danger">
-          <i class="fa fa-remove"></i>Delete</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="elem-group">
+    <button class="nupp1" routerLink ="/addMeal">Add Meal
+    </button>
+  </div>
 
+  <h1>List of meals:</h1>
+  <div class="col-md-6 col-md-8 elem-group inlined">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let meal of meals; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveMeal(meal, i)">
+          {{ meal.name }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6 elem-group inlined">
+      <app-meal-details
+        [viewMode]="true"
+        [currentMeal]="currentMeal"
+        ></app-meal-details>
+    </div>
+  </div>

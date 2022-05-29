@@ -27,7 +27,6 @@ export class AddRoomComponent implements OnInit {
       roomImages: new FormControl(),
       active: new FormControl()
     })
-
   }
 
   onSubmit(): void {
@@ -42,8 +41,5 @@ export class AddRoomComponent implements OnInit {
       listOfRoomTypes: event.target.value
     })
   }
-
-
-
 
 }

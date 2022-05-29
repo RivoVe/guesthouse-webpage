@@ -1,20 +1,13 @@
- body {
+body {
     width: 500px;
     margin: 0 auto;
     padding: 50px;
-    
   }
 
   div.overall {
     margin: auto;
     max-width: 1050px;
     background-color: whitesmoke;
-  }
-
-  div.center-all{
-    margin: auto;
-    display: flex;
-    justify-content: center;
   }
 
   div.elem-group {
@@ -50,7 +43,7 @@
   }
 
   textarea {
-    height: 150px;
+    height: 250px;
   }
 
   hr {
@@ -66,7 +59,7 @@
     font-family: 'Nanum Gothic';
     border-radius: 9px;
     cursor: pointer;
-    justify-content: center;
+    margin-left: 500px;
   }
 
   button:hover {

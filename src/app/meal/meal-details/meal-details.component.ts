@@ -1,23 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Room } from 'src/app/shared/models/room.model';
-import { RoomService } from 'src/app/shared/services/room.service';
-
+import { Meal } from 'src/app/shared/models/meal';
+import { MealService } from 'src/app/shared/services/mealService';
 
 @Component({
-  selector: 'app-room-details',
-  templateUrl: './room-details.component.html',
-  styleUrls: ['./room-details.component.scss']
+  selector: 'app-meal-details',
+  templateUrl: './meal-details.component.html',
+  styleUrls: ['./meal-details.component.scss']
 })
-export class RoomDetailsComponent implements OnInit {
+export class MealDetailsComponent implements OnInit {
   @Input() viewMode = false;
-  @Input() currentRoom: Room = {
+  @Input() currentMeal: Meal = {
     id: 0,
     name: '',
     description: '',
-    roomType: '',
+    mealType: '',
     price: 0,
-    roomImages: '',
+    mealImages: [],
     active: true
   }
 
@@ -25,24 +24,24 @@ export class RoomDetailsComponent implements OnInit {
 
 
   constructor(
-    private roomService: RoomService,
+    private mealService: MealService,
     private route: ActivatedRoute,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     if (!this.viewMode) {
       this.message = '';
-      this.getRoom(this.route.snapshot.params["id"]);
+      this.getMeal(this.route.snapshot.params["id"]);
     }
   }
 
-  getRoom(id: string): void {
-    this.roomService.get(id)
+  getMeal(id: string): void {
+    this.mealService.get(id)
     .subscribe(
       {
         next: (res) => {
-          this.currentRoom = res;
+          this.currentMeal = res;
           console.log(res);
         } ,
         error: (e) => console.error(e)
@@ -50,19 +49,14 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  updateRoom(): void{
-    this.router.navigate(['updateRoom', this.currentRoom.id]);
-  }
-
-
-  inActiveRoom(): void{
+  inActiveMeal(): void{
     this.message = '';
-    this.roomService.delete(this.currentRoom.id)
+    this.mealService.delete(this.currentMeal.id)
     .subscribe(
       {
       next: (res) => {
         console.log(res);
-        this.message = res.message ? res.message:'The room was updated';
+        this.message = res.message ? res.message:'The meal was updated';
       },
       error: (e) => console.error(e)
     }
@@ -70,35 +64,33 @@ export class RoomDetailsComponent implements OnInit {
   }
 
 
-    activeRoom(): void{
+    activeMeal(): void{
       this.message = '';
-      this.roomService.restore(this.currentRoom.id)
+      this.mealService.restore(this.currentMeal.id)
       .subscribe(
         {
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/rooms']);
+          this.router.navigate(['/meals']);
         },
         error: (e) => console.error(e)
       }
       );
     }
 
-    deleteRoom(): void{
+    deleteMeal(): void{
       this.message = '';
-      this.roomService.deleteRoom(this.currentRoom.id)
+      this.mealService.deleteMeal(this.currentMeal.id)
       .subscribe(
         {
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message:'The room was deleted';
+          this.message = res.message ? res.message:'The meal was deleted';
         },
         error: (e) => console.error(e)
       }
       );
     }
-
 
 
 }
-

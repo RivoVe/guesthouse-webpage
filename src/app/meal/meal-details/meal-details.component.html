@@ -1,0 +1,50 @@
+<div *ngIf="viewMode">
+    <div *ngIf="currentMeal.id">
+      <div class="roomdet" >
+      <h1 >{{ currentMeal.name }}</h1>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentMeal.name }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentMeal.description }}
+      </div>
+      <div>
+        <label><strong>Meal Type:</strong></label>
+        {{ currentMeal.mealType }}
+      </div>
+      <div>
+        <label><strong>Price:</strong></label>
+        {{ currentMeal.price }}
+      </div>
+      <div>
+        <label><strong>Images:</strong></label>
+        {{ currentMeal.mealImages }}
+      </div>
+      <div>
+        <label><strong>Is Active:</strong></label>
+        {{ currentMeal.active }}
+      </div>
+  
+  
+      <button class="nupp1" routerLink="/updateMeal">Update</button>
+  
+      <button class="nupp1" (click) ="inActiveMeal()" onclick="window.location.reload();">
+        Inactive
+      </button>
+  
+      <button class="nupp1" (click) ="activeMeal()" onclick="window.location.reload();">
+        Active
+      </button>
+  
+      <button class="nupp1" (click) ="deleteMeal()" onclick="window.location.reload();">
+        Delete
+      </button>
+  
+      </div>
+    </div>
+  
+   </div>
+  
+  
+  

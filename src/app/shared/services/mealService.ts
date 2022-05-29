@@ -12,31 +12,34 @@ export class MealService{
 
 constructor(private http: HttpClient) { }
 
-  //method to find meal by id
-  createMeal(data: any): Observable<any> {
-    return this.http.post(baseUrl, data, {
-      headers:new HttpHeaders()
-      .set('Content-Type', 'application/json')
-    });
-  }
+getAll(): Observable<Meal[]>{
+  return this.http.get<Meal[]>(baseUrl);
+}
 
-  //method to find meal by id
-  findMealById(id: any): Observable<Meal[]>{
-    return this.http.get<Meal[]>(`${baseUrl}?id=${id}`);
-  }
+get(id: any): Observable<any>{
+  return this.http.get(`${baseUrl}/${id}`);
+}
 
-   //method to update meal
-   updateMeal(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
-  }
+createMeal(meal: Meal): Observable<unknown> {
+  return this.http.post(baseUrl, meal);
+}
 
-  //method to delete meal by id
-  deleteMealById(id: any): Observable<any>{
-    return this.http.delete(`${baseUrl}/${id}`);
-  }
-  //get all meals
-  getAllMeals(): Observable<Meal[]>{
-    return this.http.get<Meal[]>(baseUrl);
-  }
+updateMeal(meal: Meal): Observable<unknown> {
+  return this.http.put(baseUrl, meal);
+}
+
+delete(id: any): Observable<any>{
+  return this.http.get(`${baseUrl}/delete/${id}`);
+}
+
+restore(id: any): Observable<any>{
+  return this.http.get(`${baseUrl}/restore/${id}`);
+}
+
+deleteMeal(id:any): Observable<any>{
+  return this.http.get(`${baseUrl}/full-delete/${id}`);
+}
+
+
 
 }
