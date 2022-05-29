@@ -1,120 +1,80 @@
 <div class="overall">
-<form action="reservation.php" method="post">
+
   <h1>UUS BRONEERING</h1>
+<form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
   <div class="elem-group">
     <label for="name">Your full name</label>
-    <input type="text" id="name" name="name" placeholder="Mari Matsu" pattern=[A-Z\sa-z]{3,20} required>
+    <input type="text" formControlName="name" id="name" name="name" placeholder="Mari Matsu" pattern=[A-Z\sa-z]{3,20} required>
   </div>
 
   <div class="elem-group">
     <label for="email">Your E-mail</label>
-    <input type="email" id="email" name="email" placeholder="mari.matsu@email.com" required>
+    <input type="email" formControlName="email" id="email" name="email" placeholder="mari.matsu@email.com" required>
   </div>
 
   <div class="elem-group">
     <label for="phoneNumber">Your Phone number</label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+372 5656 5656" value="+372 " pattern=[0-9]{3,20} required>
+    <input type="string" formControlName="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder="+372 5656 5656" value="+372 " pattern=[0-9]{3,20} required>
   </div>
 
   <hr>
   <div class="elem-group inlined">
     <label for="arrivalDate">Check-in Date</label>
-    <input type="date" id="arrivalDate" name="arrivalDate" required>
+    <input type="date" formControlName="arrivalDate" id="arrivalDate" name="arrivalDate" required>
   </div>
 
   <div class="elem-group inlined">
     <label for="leavingDate">Check-out Date</label>
-    <input type="date" id="leavingDate" name="leavingDate" required>
+    <input type="date" formControlName="leavingDate" id="leavingDate" name="leavingDate" required>
   </div>
 
   <div class="elem-group inlined">
     <label for="numberOfPeople">Number of people arriving</label>
-    <input type="number" id="numberOfPeople" name="numberOfPeople" placeholder="2" min="1" required>
+    <input type="number" formControlName="numberOfPeople" id="numberOfPeople" name="numberOfPeople" placeholder="2" min="1" required>
   </div>
 
   <div class="elem-group inlined">
-    <label for="listOfRooms">Select room(s)</label>
-    <select id="listOfRooms" name="room_preference" placeholder="Select room" required>
-      <optgroup label="Single rooms">
-        <option value="room1">room1</option>
-         <option value="room2">room2</option>
-       </optgroup>
-       <optgroup label="Double rooms">
-         <option value="room1">room1</option>
-         <option value="room2">room2</option>
-       </optgroup>
-       <optgroup label="Apartments">
-         <option value="Apartment1">Apartment1</option>
-         <option value="Apartment2">Apartment2</option>
-       </optgroup>
-       <optgroup label="Summerhouses">
-         <option value="Summerhouse1">Summerhouse1</option>
-         <option value="Summerhouse2">Summerhouse2</option>
-       </optgroup>
-    </select>
-  </div>
+    <label>Select room(s)</label>
+    <select formControlName="rooms" class="form-control" multiple>
+      <option disabled></option>
+      <option *ngFor="let r of rooms" [ngValue]="r">
+        {{r}}
+      </option>
+  </select>
+</div>
 
-  <div class="elem-group inlined">
-    <label for="listOfMeals">Select meal(s)</label>
-    <select id="listOfMeals" name="listOfMeals" placeholder="Select meal(s)" required>
-      <optgroup label="Breakfast">
-        <option value="Breakfast1">Breakfast1</option>
-         <option value="Breakfast2">Breakfast2</option>
-       </optgroup>
-       <optgroup label="Lunch">
-         <option value="Lunch1">Lunch1</option>
-         <option value="Lunch2">Lunch2</option>
-       </optgroup>
-       <optgroup label="Dinner">
-         <option value="Dinner1">Dinner1</option>
-         <option value="Dinner2">Dinner2</option>
-       </optgroup>
-       <optgroup label="Snacks">
-         <option value="Snacks">Snacks</option>
-         <option value="Snacks">Snacks</option>
-       </optgroup>
-    </select>
-  </div>
 
-  <div class="elem-group inlined">
-    <label for="listOfExtras">Select extra(s)</label>
-    <select id="listOfExtras" name="listOfExtras" placeholder="Select extra(s)">
-      <optgroup label="Sauna">
-        <option value="Sauna1">Sauna1</option>
-         <option value="Sauna2">Sauna2</option>
-       </optgroup>
-       <optgroup label="Sporting">
-         <option value="Sporting1">Sporting1</option>
-         <option value="Sporting1">Sporting2</option>
-       </optgroup>
-       <optgroup label="Other">
-         <option value="Other1">Other1</option>
-         <option value="Other2">Other2</option>
-       </optgroup>
-    </select>
-  </div>
-  <hr>
+<div class="elem-group inlined">
+  <label>Select meal(s)</label>
+  <select formControlName="meals" class="form-control">
+    <option disabled></option>
+    <option *ngFor="let m of meals"[ngValue]="m">
+      {{m}}</option>
+</select>
+</div>
 
-  <div class="elem-group">
-    <legend>Select payment method:</legend>
+<div class="elem-group inlined">
+  <label>Select extra(s)</label>
+  <select formControlName="extras" class="form-control" muliple>
+    <option disabled></option>
+    <option *ngFor="let e of extras" [ngValue]="e">
+      {{e}}
+    </option>
+</select>
+</div>
+<hr>
 
-    <div>
-      <input type="radio" id="Payment beforehand" name="Payment" value="Payment beforehand"
-             >
-      <label for="Payment beforehand">Payment beforehand</label>
-    </div>
-
-    <div>
-      <input type="radio" id="Payment when leaving" name="Payment" value="Payment when leaving" checked>
-      <label for="Payment when leaving">Payment when leaving</label>
-    </div>
-
-  </div>
+<div class="elem-group">
+  <label>Select payment method:</label>
+  <select formControlName="paymentMethod" class="form-control">
+    <option *ngFor="let pm of paymentMethod">{{pm | uppercase}}</option>
+</select>
+</div>
 
   <hr>
   <div class="elem-group">
-    <label for="message">Anything else we should know?</label>
-    <textarea id="message" name="visitor_message" placeholder="For Example: I have allergy for nuts, I need extra blanket..."></textarea>
+    <label for="comments">Anything else we should know?</label>
+    <textarea id="comments" name="comments" placeholder="For Example: I have allergy for nuts, I need extra blanket..."></textarea>
   </div>
 
   <button class="button" type="submit" onclick="createBooking">SEND BOOKING!</button>

@@ -3,7 +3,12 @@
     <div class="roomdet" >
     <h1 >{{ currentRoom.name }}</h1>
     <div>
-      <label><strong>Name:</strong></label> {{ currentRoom.name }}
+      <label><strong>ID:</strong>
+      </label> {{ currentRoom.id }}
+    </div>
+    <div>
+      <label><strong>Name:</strong>
+      </label> {{ currentRoom.name }}
     </div>
     <div>
       <label><strong>Description:</strong></label>
@@ -27,7 +32,7 @@
     </div>
 
 
-    <button class="nupp1" routerLink="/updateRoom/:id">Update</button>
+    <button class="nupp1" (click) ="updateRoom()">Update</button>
 
     <button class="nupp1" (click) ="inActiveRoom()" onclick="window.location.reload();">
       Inactive

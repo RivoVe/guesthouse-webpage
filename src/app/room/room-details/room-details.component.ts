@@ -50,19 +50,10 @@ export class RoomDetailsComponent implements OnInit {
     );
   }
 
-  /*updateRoom(): void{
-    this.message = '';
-    this.roomService.updateRoom(this.currentRoom)
-    .subscribe(
-      {
-      next: (res) => {
-        console.log(res);
-      },
-      error: (e) => console.error(e)
-    }
-    );
+  updateRoom(): void{
+    this.router.navigate(['updateRoom', this.currentRoom.id]);
   }
-  */
+
 
   inActiveRoom(): void{
     this.message = '';
