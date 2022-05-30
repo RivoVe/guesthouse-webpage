@@ -1,1 +1,55 @@
-<p>booking-details works!</p>
+<div *ngIf="viewMode">
+  <div *ngIf="currentBooking.id">
+    <div class="roomdet" >
+    <h1 >{{ currentBooking.name }}</h1>
+    <div>
+      <label><strong>ID:</strong></label>
+      {{ currentBooking.id }}
+    </div>
+    <div>
+      <label><strong>Arrival Date:</strong></label>
+      {{ currentBooking.arrivalDate }}
+    </div>
+    <div>
+      <label><strong>Leaving Date:</strong></label>
+      {{ currentBooking.leavingDate }}
+    </div>
+    <div>
+      <label><strong>Number Of People:</strong></label>
+      {{ currentBooking.numberOfPeople }}
+    </div>
+    <div>
+      <label><strong>Name:</strong></label>
+      {{ currentBooking.name }}
+    </div>
+    <div>
+      <label><strong>Email:</strong></label>
+      {{ currentBooking.email }}
+    </div>
+    <div>
+      <label><strong>Booked rooms:</strong></label>
+      {{ currentBooking.rooms }}
+    </div>
+
+
+    <button class="nupp1" (click) ="updateBooking()">Update</button>
+
+    <button class="nupp1" (click) ="inActiveBooking()" onclick="window.location.reload();">
+      Inactive
+    </button>
+
+    <button class="nupp1" (click) ="restoreBooking()" onclick="window.location.reload();">
+      Active
+    </button>
+
+    <button class="nupp1" (click) ="deleteBooking()" onclick="window.location.reload();">
+      Delete
+    </button>
+
+    </div>
+  </div>
+
+ </div>
+
+
+

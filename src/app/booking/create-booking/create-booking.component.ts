@@ -26,9 +26,10 @@ meals: Meal[] = [];
 extras: Extras[] = [];
 paymentMethod: string [] =['PAY_WHEN_ARRIVING', 'BEFOREHAND_INVOICE'];
 createBookingForm!: FormGroup;
-roomSelected!: Room[];
-mealsSelected!: Meal[];
-extrasSelected!: Extras[];
+
+currentRoom: any = this.rooms[0];
+currentMeal: any = this.meals[0];
+currentExtras: any = this.extras[0];
 
   constructor(private bookingService: BookingService, private roomService: RoomService,
     private router: Router, private mealService: MealService,
@@ -76,17 +77,27 @@ this.extrasService.getAll().subscribe(res => {
 
   onSubmit(): void {
     // get list of room-ids that are selected in the form and get the rooms from this.rooms based on the id selected.
-    this.roomSelected;
-    this.mealsSelected;
-    this.extrasSelected;
 
     this.bookingService.createBooking(this.createBookingForm.value).subscribe(() => {
       this.createBookingForm.reset();
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('');
     });
 
   }
+setNewRoom(room: Room): void {
+  console.log(room);
+  this.currentRoom=room;
+}
 
+setNewMeal(meal: Meal): void {
+  console.log(meal);
+  this.currentMeal=meal;
+}
+
+setNewExtra(extras: Extras): void {
+  console.log(extras);
+  this.currentExtras=extras;
+}
 
   }
 

@@ -13,8 +13,8 @@ export class BookingService {
 
 
   //method to find booking by id
-  createBooking(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+  createBooking(booking: Booking): Observable<unknown> {
+    return this.http.post(baseUrl, booking);
   }
   //method to find booking by id
   findBookingById(id: any): Observable<any>{
@@ -22,13 +22,13 @@ export class BookingService {
   }
 
   //method to update booking
-  updateBooking(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/full-delete/${id}`, data);
+  updateBooking(booking: Booking): Observable<unknown> {
+    return this.http.put(baseUrl, booking);
   }
 
   //method to full delete booking by id
   deleteBookingById(id: any): Observable<any>{
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this.http.get(`${baseUrl}/full-delete/${id}`);
   }
 
   //get all bookings

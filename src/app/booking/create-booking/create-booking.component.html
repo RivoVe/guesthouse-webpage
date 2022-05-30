@@ -35,37 +35,31 @@
 
   <div class="elem-group inlined">
     <label>Select room(s)</label>
-    <select formControlName="rooms" [(ngModel)]="roomSelected" class="form-control" multiple>
-      <option disabled></option>
-      <option *ngFor="let r of rooms" value="{{r}}">
+    <select (ngModelChange)="setNewRoom($event)" (ngModel)="rooms" formControlName="rooms" multiple>
+      <option *ngFor="let r of rooms" [ngValue]="r">
         {{ r.name }}
       </option>
   </select>
-  <br>
-  selected value is {{roomSelected}}
 </div>
-
 
 <div class="elem-group inlined">
   <label>Select meal(s)</label>
-  <select formControlName="meals" [(ngModel)]="mealsSelected"  class="form-control" multiple>
-    <option disabled></option>
-    <option *ngFor="let m of meals" value="{{m}}">
-      {{m.name}}</option>
+  <select (ngModelChange)="setNewMeal($event)" (ngModel)="meals" formControlName="meals" multiple>
+    <option *ngFor="let m of meals" [ngValue]="m">
+      {{ m.name }}
+    </option>
 </select>
 </div>
 
 <div class="elem-group inlined">
   <label>Select extra(s)</label>
-  <select formControlName="extras" [(ngModel)]="extrasSelected" class="form-control" multiple>
-    <option disabled></option>
-    <option *ngFor="let e of extras" value="{{e}}">
-      {{e.name}}
+  <select (ngModelChange)="setNewExtra($event)" (ngModel)="extras" formControlName="extras" multiple>
+    <option *ngFor="let e of extras" [ngValue]="e">
+      {{ e.name }}
+      {{ e.price }}
     </option>
 </select>
 </div>
-<br>
-<br>
 
 <hr>
 
