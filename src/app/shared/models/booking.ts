@@ -1,6 +1,7 @@
 import { Extras } from "./extras";
 import { User } from "./user";
 import { Meal } from "./meal";
+import { Room } from "./room.model";
 
 export class Booking {
   id?:number;
@@ -10,21 +11,21 @@ export class Booking {
   name?:string;
   email?:string;
   phoneNumber?:string;
-  rooms?:any;
+  rooms?:Room[];
   meals?: Meal[];
   extras?:Extras[];
   totalPrice?:number;
   paymentMethod?:string;
   comments?:string;
-  user?:User[];
+  user?:any;
   isConfirmed?:boolean;
   isActive?:boolean;
   isPaid?:boolean;
 
   constructor(id: number, arrivalDate: Date, leavingDate: Date,
     numberOfPeople: number, name: string, email: string, phoneNumber: string,
-    rooms: any, meals: Meal[], extras: Extras[], totlPrice: number,
-    paymentMethod: string, comments: string, user: User[],
+    rooms: Room[], meals: Meal[], extras: Extras[], totlPrice: number,
+    paymentMethod: string, comments: string, user: any,
     isConfirmed:boolean, isActive: boolean, isPaid: boolean ){
       this.id=id;
       this.arrivalDate=arrivalDate;

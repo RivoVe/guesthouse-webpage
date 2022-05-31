@@ -1,0 +1,36 @@
+<div class="list">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="name"/>
+
+      <div class="input-group-append">
+        <button class="nupp1" type="button"> Search </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="elem-group">
+    <button class="nupp1" routerLink ="/booking">Add Booking
+    </button>
+  </div>
+
+  <h1>List of bookings:</h1>
+  <div class="col-md-6 col-md-8 elem-group inlined">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let booking of bookings; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveBooking(booking, i)">
+          {{ booking.name }}
+        </li>
+      </ul>
+    </div>
+
+   <div class="col-md-6 elem-group inlined">
+      <app-booking-details
+        [viewMode]="true"
+        [currentBooking]="currentBooking"
+      ></app-booking-details>
+    </div>
+  </div>
