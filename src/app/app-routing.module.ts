@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'meals', component: MealListComponent},
   { path: 'meals/:id', component: MealDetailsComponent },
   { path: 'addMeal', component: AddMealComponent},
-  { path: 'updateMeal', component: UpdateMealComponent },
+  { path: 'updateMeal/:id', component: UpdateMealComponent },
 
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'extras', component: ExtraListComponent },
   { path: 'extras/:id', component: ExtraDetailsComponent },
   { path: 'addExtra', component: AddExtraComponent },
-  { path: 'updateExtra', component: UpdateExtraComponent },
+  { path: 'updateExtra/:id', component: UpdateExtraComponent },
   
 
 
