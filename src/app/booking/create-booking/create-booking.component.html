@@ -3,43 +3,51 @@
   <h1>UUS BRONEERING</h1>
 <form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
   <div class="elem-group">
-    <label for="name">Your full name</label>
-    <input type="text" formControlName="name" id="name" name="name" placeholder="Mari Matsu" pattern=[A-Z\sa-z]{3,20} required>
+    <span class="help-block" >* marked fields are required.</span>
+    <label for="name">Your full name *</label>
+    <input type="text" id="name" class="form-control" formControlName="name" name="name" placeholder="Mari Matsu" pattern=[A-Z\sa-z]{3,20} >
+    <span class="help-block" *ngIf="createBookingForm.get('name')?.invalid && createBookingForm.get('name').touched">Name is a required!</span>
   </div>
 
   <div class="elem-group">
-    <label for="email">Your E-mail</label>
-    <input type="email" formControlName="email" id="email" name="email" placeholder="mari.matsu@email.com" required>
+    <label for="email">Your E-mail *</label>
+    <input type="email" formControlName="email" id="email" name="email" placeholder="mari.matsu@email.com" >
+    <span class="help-block" *ngIf="createBookingForm.get('email')?.invalid && createBookingForm.get('email').touched">E-mail is a required!</span>
   </div>
 
   <div class="elem-group">
-    <label for="phoneNumber">Your Phone number</label>
-    <input type="string" formControlName="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder="+372 5656 5656" value="+372 " pattern=[0-9]{3,20} required>
+    <label for="phoneNumber">Your Phone number *</label>
+    <input type="string" formControlName="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder="+372 5656 5656" value="+372 " pattern=[0-9\+\s]{10,16} >
+    <span class="help-block" *ngIf="createBookingForm.get('phoneNumber')?.invalid && createBookingForm.get('phoneNumber').touched">Please enter correct phone number!</span>
   </div>
 
   <hr>
   <div class="elem-group inlined">
-    <label for="arrivalDate">Check-in Date</label>
-    <input type="date" formControlName="arrivalDate" id="arrivalDate" name="arrivalDate" required>
+    <label for="arrivalDate">Check-in Date *</label>
+    <input type="date" formControlName="arrivalDate" id="arrivalDate" name="arrivalDate" >
+    <span class="help-block" *ngIf="createBookingForm.get('arrivalDate')?.invalid && createBookingForm.get('arrivalDate').touched">Please enter arrival Date!</span>
   </div>
 
   <div class="elem-group inlined">
-    <label for="leavingDate">Check-out Date</label>
-    <input type="date" formControlName="leavingDate" id="leavingDate" name="leavingDate" required>
+    <label for="leavingDate">Check-out Date *</label>
+    <input type="date" formControlName="leavingDate" id="leavingDate" name="leavingDate" >
+    <span class="help-block" *ngIf="createBookingForm.get('leavingDate')?.invalid && createBookingForm.get('leavingDate').touched">Please enter leaving Date!</span>
   </div>
 
   <div class="elem-group inlined">
-    <label for="numberOfPeople">Number of people arriving</label>
-    <input type="number" formControlName="numberOfPeople" id="numberOfPeople" name="numberOfPeople" placeholder="2" min="1" required>
+    <label for="numberOfPeople">Number of people arriving *</label>
+    <input type="number" formControlName="numberOfPeople" id="numberOfPeople" name="numberOfPeople" placeholder="number of people" min="1" >
+    <span class="help-block" *ngIf="createBookingForm.get('numberOfPeople')?.invalid && createBookingForm.get('numberOfPeople').touched">Please enter number of people arriving!</span>
   </div>
 
   <div class="elem-group inlined">
-    <label>Select room(s)</label>
+    <label>Select room(s) *</label>
     <select (ngModelChange)="setNewRoom($event)" (ngModel)="rooms" formControlName="rooms" multiple>
       <option *ngFor="let r of rooms" [ngValue]="r">
         {{ r.name }}
       </option>
   </select>
+  <!--<span class="help-block" *ngIf="createBookingForm.get('rooms')?.invalid">Please select room!</span> -->
 </div>
 
 <div class="elem-group inlined">
@@ -64,10 +72,12 @@
 <hr>
 
 <div class="elem-group">
-  <label>Select payment method:</label>
+  <label>Select payment method: *</label>
   <select formControlName="paymentMethod" class="form-control">
+    <option enabled>Select payment method</option>
     <option *ngFor="let pm of paymentMethod">{{pm | uppercase}}</option>
 </select>
+<span class="help-block" *ngIf="createBookingForm.get('paymentMethod')?.invalid && createBookingForm.get('paymentMethod').touched">Please select payment method!</span>
 </div>
 
   <hr>
@@ -112,7 +122,11 @@
       <label for="inactive">No</label>
    </div>
   </div>
+  <div>
+  <span class="help-block2" *ngIf="createBookingForm.invalid">* marked fields are required!</span>
+  </div>
 
-  <button class="button" type="submit">SEND BOOKING!</button>
+
+  <button class="button" type="submit" [disabled]="createBookingForm.invalid">SEND BOOKING!</button>
 </form>
 </div>

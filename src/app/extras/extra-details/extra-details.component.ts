@@ -48,6 +48,10 @@ export class ExtraDetailsComponent implements OnInit {
     );
   }
 
+  updateExtra(): void{
+    this.router.navigate(['updateExtra', this.currentExtras.id]);
+  }
+
   inActiveExtra(): void{
     this.message = '';
     this.extrasService.delete(this.currentExtras.id)

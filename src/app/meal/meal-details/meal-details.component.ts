@@ -49,6 +49,10 @@ export class MealDetailsComponent implements OnInit {
     );
   }
 
+  updateMeal(): void{
+    this.router.navigate(['updateMeal', this.currentMeal.id]);
+  }
+
   inActiveMeal(): void{
     this.message = '';
     this.mealService.delete(this.currentMeal.id)

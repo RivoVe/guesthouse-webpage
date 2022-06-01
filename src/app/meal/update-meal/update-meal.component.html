@@ -1,1 +1,43 @@
-<p>update-meal works!</p>
+<div class="center-all">
+    <div class="elem-group inlined">
+      <h1>Update Meal</h1>
+    <form [formGroup]="updateMealForm" (ngSubmit)="onSubmit()">
+      <div class="elem-group">
+        <label for="meal-name">Meal name</label>
+        <input required type="text" formControlName="name" id="meal-name"
+        placeholder="Meal name" pattern=[A-Z\sa-z]{3,20}>
+      </div>
+    
+      <div class="elem-group">
+        <label for="description">Description</label>
+        <textarea type="text" formControlName="description"
+        id="description" placeholder="Enter Description"></textarea>
+      </div>
+    
+      <div class="elem-group">
+        <label for="price">Meal price</label>
+        <input required type="number" formControlName="price" id="price"
+        placeholder="Enter Price" pattern=[0-9]{1,5}>
+      </div>
+    
+      <div class="elem-group">
+        <label for="mealImages">Meal Image</label>
+        <input required type="text" formControlName="mealImages"
+        id="mealImages" placeholder="Enter Meal Image">
+      </div>
+    
+      <div class="form-group">
+        <label for="meal-type">Meal Type:</label>
+        <select formControlName="mealType" class="form-control">
+            <option disabled></option>          
+            <option *ngFor="let mtp of mealTypes">{{mtp | uppercase}}</option>
+        </select>
+      </div>
+    
+      <div class="elem-group">
+        <button class="button" type="submit">UPDATE!</button>
+      </div>
+    </form>
+    </div>
+
+  

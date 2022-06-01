@@ -25,28 +25,21 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-
   { path: 'booking', component: CreateBookingComponent},
   { path: 'bookings', component: BookingListComponent},
   { path: 'bookings/:id', component: BookingDetailsComponent},
-
   { path: 'meals', component: MealListComponent},
   { path: 'meals/:id', component: MealDetailsComponent },
   { path: 'addMeal', component: AddMealComponent},
-  { path: 'updateMeal', component: UpdateMealComponent },
-
+  { path: 'updateMeal/:id', component: UpdateMealComponent },
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
   { path: 'addRoom', component: AddRoomComponent },
-  { path: 'updateRoom', component: UpdateRoomComponent },
   { path: 'updateRoom/:id', component: UpdateRoomComponent },
-
   { path: 'extras', component: ExtraListComponent },
   { path: 'extras/:id', component: ExtraDetailsComponent },
   { path: 'addExtra', component: AddExtraComponent },
-  { path: 'updateExtra', component: UpdateExtraComponent },
-
-
+  { path: 'updateExtra/:id', component: UpdateExtraComponent }
 
 ];
 

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from 'src/app/shared/services/room.service';
 
 
-const baseUrl = 'http://localhost:4200/update/:id'
+const baseUrl = 'http://localhost:4200/updateRoom/:id'
 
 @Component({
   selector: 'app-update-room',
@@ -17,7 +17,7 @@ export class UpdateRoomComponent implements OnInit {
   updateRoomForm!: FormGroup;
 
 
-  constructor(private roomService: RoomService,   private route: ActivatedRoute, private router: Router) { }
+  constructor(private roomService: RoomService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.updateRoomForm = new FormGroup({
