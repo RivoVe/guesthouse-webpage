@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
@@ -45,6 +44,7 @@ import { MealDetailsComponent } from './meal/meal-details/meal-details.component
 import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { BookingDetailsComponent } from './booking/booking-details/booking-details.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 
@@ -54,7 +54,6 @@ import { BookingDetailsComponent } from './booking/booking-details/booking-detai
     AppComponent,
     AuthComponent,
     SignupComponent,
-    SigninComponent,
     HomeComponent,
     HeaderComponent,
     NavtabsComponent,
@@ -73,7 +72,8 @@ import { BookingDetailsComponent } from './booking/booking-details/booking-detai
     MealDetailsComponent,
     UpdateMealComponent,
     BookingListComponent,
-    BookingDetailsComponent
+    BookingDetailsComponent,
+    LoginComponent
 
   ],
   imports: [
