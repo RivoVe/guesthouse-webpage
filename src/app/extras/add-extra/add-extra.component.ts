@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ExtrasService } from 'src/app/shared/services/extrasService';
 
 const baseUrl = 'http://localhost:4200/addExtra'
@@ -15,7 +16,7 @@ export class AddExtraComponent implements OnInit {
   addExtrasForm!: FormGroup;
 
 
-  constructor(private extrasService: ExtrasService) { }
+  constructor(private extrasService: ExtrasService, private router: Router) { }
 
   ngOnInit(): void {
     this.addExtrasForm = new FormGroup({
@@ -31,7 +32,7 @@ export class AddExtraComponent implements OnInit {
   onSubmit(): void {
     this.extrasService.createExtra(this.addExtrasForm.value).subscribe(() => {
       this.addExtrasForm.reset();
-      
+      this.router.navigateByUrl('/extras');
 
     })
   }

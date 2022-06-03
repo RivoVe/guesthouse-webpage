@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MealService } from 'src/app/shared/services/mealService';
 
@@ -25,7 +25,7 @@ export class AddMealComponent implements OnInit {
       mealType: new FormControl(),
       price: new FormControl(),
       mealImages: new FormControl(),
-      active: new FormControl()  
+      active: new FormControl()
     })
   }
 

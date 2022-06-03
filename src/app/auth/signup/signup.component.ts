@@ -25,10 +25,10 @@ export class SignupComponent implements OnInit {
     name:new FormControl(),
     phoneNumber:new FormControl(),
     email:new FormControl(),
-    registrationDate:new FormControl(Date.now),
-    isActive:new FormControl(true),
+    registrationDate:new FormControl(),
+    isActive:new FormControl(),
     password:new FormControl(),
-    authority: new FormControl('ROLE_LOGGED_IN')
+    authority: new FormControl()
   })
   }
 
