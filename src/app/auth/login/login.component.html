@@ -1,18 +1,25 @@
-<div class="jumbotron">
-  <h1 class="display-4">Login</h1>
-  <hr class="my-4">
-  <form class="example-form" [formGroup]="loginGroup">
-    <mat-form-field class="example-full-width">
-      <mat-label>Username</mat-label>
-      <input formControlName="email" matInput type="text" placeholder="Email">
-    </mat-form-field>
+<div class="center-all">
+  <div class="elem-group inlined">
+    <h1>Login!</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input formControlName="password" matInput type="password" placeholder="Password">
-    </mat-form-field>
+    <div class="elem-group">
+      <label>Your E-mail *</label>
+      <input formControlName="email" type="email"  name="email" placeholder="mari.matsu@email.com" >
+    </div>
 
-    <!--<button mat-raised-button color="warn" (click)="login()">Login</button> -->
+    <div class="elem-group">
+      <label>Your password *</label>
+      <input formControlName="password" type="password" name="password" placeholder="Enter password">
+    </div>
+
+    <div class="elem-group">
+      <button class="button" type="submit">Login!
+      </button>
+    </div>
+    <a style="color:blue; margin-top: 20px" routerLink="/signup"> New here? Click here to sign up!</a>
+
   </form>
-</div>
+  </div>
+  </div>
 

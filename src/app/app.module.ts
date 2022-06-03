@@ -24,9 +24,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatListModule } from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
 import { AddMealComponent } from './meal/add-meal/add-meal.component';
 import { AddRoomComponent } from './room/add-room/add-room.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
@@ -44,6 +42,8 @@ import { MealDetailsComponent } from './meal/meal-details/meal-details.component
 import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { BookingDetailsComponent } from './booking/booking-details/booking-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './auth/login/login.component';
 
 

@@ -1,1 +1,37 @@
-<p>signup works!</p>
+<div class="center-all">
+  <div class="elem-group inlined">
+    <h1>Sign up!</h1>
+  <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div class="elem-group">
+      <label>Enter full name</label>
+      <input required type="text" formControlName="name"
+      placeholder="Enter your name" pattern=[A-Z\sa-z]{3,20}>
+    </div>
+
+    <div class="elem-group">
+      <label for="email">Your E-mail *</label>
+      <input type="email" formControlName="email" id="email" name="email" placeholder="mari.matsu@email.com" >
+      <span class="help-block" *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email').touched">E-mail is required!</span>
+    </div>
+
+    <div class="elem-group">
+      <label>Your Phone number *</label>
+      <input type="string" formControlName="phoneNumber" name="phoneNumber" placeholder="+372 5656 5656" value="+372 " pattern=[0-9\+\s]{10,16} >
+      <span class="help-block" *ngIf="addUserForm.get('phoneNumber')?.invalid && addUserForm.get('phoneNumber').touched">Please enter correct phone number!</span>
+    </div>
+
+    <div class="elem-group">
+      <label>Your password *</label>
+      <input type="password" formControlName="password" name="password" placeholder="Enter password">
+    </div>
+
+    <div class="elem-group">
+      <button class="button" type="submit">Sign up!
+      </button>
+    </div>
+    <a style="color:blue; margin-top: 20px" routerLink="/login"> Allready registered? Click here to login!</a>
+
+  </form>
+  </div>
+  </div>
+
