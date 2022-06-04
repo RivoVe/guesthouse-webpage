@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -45,6 +44,7 @@ import { BookingDetailsComponent } from './booking/booking-details/booking-detai
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './auth/login/login.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -52,7 +52,6 @@ import { LoginComponent } from './auth/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     SignupComponent,
     HomeComponent,
     HeaderComponent,
@@ -95,7 +94,8 @@ import { LoginComponent } from './auth/login/login.component';
     FormsModule,
     MatListModule,
     NgbModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule
 
     ],
   providers: [],

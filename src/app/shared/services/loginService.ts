@@ -8,10 +8,12 @@ const baseUrl = 'http://localhost:8080/login'
   providedIn: 'root'
 })
 export class LoginService {
+  private LOGIN_BASE_URL = 'login';
 
   constructor(private httpClient: HttpClient) {
   }
 
+  //method to validate login
   public validateLogin(login: Login) {
     return this.httpClient.post<Login>(baseUrl, login);
   }
