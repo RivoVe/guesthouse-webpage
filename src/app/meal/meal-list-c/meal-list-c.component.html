@@ -2,7 +2,7 @@
     <div class="content" role="main">
         <div class="row">
             <div class="col-md-6 col-sm-6 hotell" *ngFor="let meal of Mealslist"><br>
-                <img (click)="getMealSlide(meal.id)" class="img-responsive img-thumbnail imgclass" src="{{meal.roomImages}}"><br>
+                <img (click)="getMealSlide(meal.id)" class="img-responsive img-thumbnail imgclass" src="{{meal.mealImages}}"><br>
                 <h1 class="room-name">{{meal.name}}</h1>
                 <h3 class="description">{{meal.description}}</h3>
                 <h3 class="price-right">Price: {{meal.price | currency:'EUR'}}</h3>
@@ -10,21 +10,21 @@
                     <div fxFlex fxLayoutAlign="flex-end">
                         <button class="book-now-button" mat-stroked-button color="primary" [routerLink]="'/booking'" >
                             Order Now
-                        </button>        
+                        </button>
                     </div>
                 </div>
-    
-    
+
+
             </div>
         </div>
-    
-        
+
+
     </div>
     </div>
-    
-    
+
+
     <ng-template #content let-modal>
-      
+
         <div class="modal-body">
           <form>
             <ngb-carousel>
@@ -36,10 +36,10 @@
                     <h3>{{meal.name}}</h3>
                     <p>{{meal.price | currency:'EUR'}}</p>
                   </div>
-                            
+
                 </ng-template>
               </ngb-carousel>
-                    
+
           </form>
-        </div>    
+        </div>
     </ng-template>
