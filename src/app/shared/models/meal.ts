@@ -7,11 +7,11 @@ export class Meal{
   price?:number;
   active?:boolean;
   mealType?:string;
-  mealImages?:MealImage[];
+  mealImages?:string;
 
   constructor(id:number, name:string, description:string,
     price: number, active:boolean, mealType:string,
-     mealImages: MealImage[]){
+     mealImages: string){
       this.id=id;
       this.name=name;
       this.description=description;

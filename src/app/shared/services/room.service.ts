@@ -12,8 +12,8 @@ export class RoomService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Room[]>{
-    return this.http.get<Room[]>(baseUrl);
+  getAll(): Observable<any>{
+    return this.http.get(baseUrl);
   }
 
   get(id: any): Observable<any>{
@@ -39,6 +39,18 @@ export class RoomService {
   deleteRoom(id:any): Observable<any>{
     return this.http.get(`${baseUrl}/full-delete/${id}`);
   }
+
+  UploadImage(inputdata: any): Observable<any>{
+    return this.http.post("http://localhost:8080/rooms/UploadImage", inputdata,{
+      reportProgress:true,
+      observe:'events'
+    });
+  }
+
+  RemoveImage(id: any): Observable<any>{
+    return this.http.get(`${baseUrl}/RemoveImage/${id}`);
+  }
+
 
 
 

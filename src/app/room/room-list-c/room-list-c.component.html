@@ -1,0 +1,45 @@
+<div class="page">
+<div class="content" role="main">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 hotell" *ngFor="let room of Roomslist"><br>
+            <img (click)="getRoomSlide(room.id)" class="img-responsive img-thumbnail imgclass" src="{{room.roomImages}}"><br>
+            <h1 class="room-name">{{room.name}}</h1>
+            <h3 class="description">{{room.description}}</h3>
+            <h3 class="price-right">Price from: {{room.price | currency:'EUR'}} / per night</h3>
+            <div class="book-now-container">
+                <div fxFlex fxLayoutAlign="flex-end">
+                    <button class="book-now-button" mat-stroked-button color="primary" [routerLink]="'/booking'" >
+                        Book Now
+                    </button>        
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    
+</div>
+</div>
+
+
+<ng-template #content let-modal>
+  
+    <div class="modal-body">
+      <form>
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let room of Imagelist">
+              <div class="picsum-img-wrapper">
+                <img [src]="room.roomImages" class="popupclass" alt="Random first slide">
+              </div>
+              <div class="carousel-caption">
+                <h3>{{room.name}}</h3>
+                <p>{{room.price | currency:'EUR'}}</p>
+              </div>
+                        
+            </ng-template>
+          </ngb-carousel>
+                
+      </form>
+    </div>    
+</ng-template>

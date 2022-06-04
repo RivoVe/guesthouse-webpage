@@ -1,0 +1,59 @@
+.page{
+    padding: 3.0555555555555554em 15px;
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.imagediv{
+    height: 350px;
+}
+
+.row{
+    width: 100%;
+    background-color: whitesmoke;
+}
+.imgclass{
+    width: 100%;
+    height: 500px;
+}
+.popupclass{
+    height: 400px;
+}
+
+.price-right{
+    text-align: right;
+    height: 30px;
+    color: red;
+    font-size: 1.75em;
+    font-family: 'Nanum Gothic'
+}
+
+.room-name{
+    height: 60px;
+    font-size: 3.75em;
+    font-family: 'Nanum Gothic';
+    color: #0e857f;
+    margin-top: 20px;
+}
+
+
+.description{
+    width: 100%;
+    height: 300px;
+    text-size-adjust: 20px;
+}
+.book-now-container{
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    }
+
+    
+.book-now-button{
+    width: 170px;
+    color: black;
+    border: 2px solid rgb(36, 155, 72);
+    text-transform: uppercase;
+    }

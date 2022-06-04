@@ -6,11 +6,11 @@ export class Extras {
   description?: string;
   price?: number;
   active?: boolean;
-  extrasImages?: ExtrasImages[];
+  extrasImages?: string;
 
   constructor(id: number, name: string, description: string,
     price: number, active: boolean,
-    extrasImages: ExtrasImages[]){
+    extrasImages: string){
       this.id=id;
       this.name=name;
       this.description=description;

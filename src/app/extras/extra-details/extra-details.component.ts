@@ -15,7 +15,7 @@ export class ExtraDetailsComponent implements OnInit {
     name: '',
     description: '',
     price: 0,
-    extrasImages: [],
+    extrasImages: '',
     active: true
       
   }

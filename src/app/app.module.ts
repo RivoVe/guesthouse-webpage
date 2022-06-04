@@ -45,6 +45,10 @@ import { BookingDetailsComponent } from './booking/booking-details/booking-detai
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './auth/login/login.component';
+import { CommonModule } from '@angular/common';
+import { RoomListCComponent } from './room/room-list-c/room-list-c.component';
+import { MealListCComponent } from './meal/meal-list-c/meal-list-c.component';
+import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.component';
 
 
 
@@ -73,7 +77,10 @@ import { LoginComponent } from './auth/login/login.component';
     UpdateMealComponent,
     BookingListComponent,
     BookingDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    RoomListCComponent,
+    MealListCComponent,
+    ExtraListCComponent
 
   ],
   imports: [
@@ -95,12 +102,14 @@ import { LoginComponent } from './auth/login/login.component';
     FormsModule,
     MatListModule,
     NgbModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CommonModule
 
     ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class ProductModule { }
 
 
