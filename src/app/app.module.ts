@@ -79,7 +79,10 @@ import { HideForRolesDirective } from './directives/hideForRoles.directive';
     BookingListComponent,
     BookingDetailsComponent,
     LoginComponent,
-    HideForRolesDirective
+    HideForRolesDirective,
+    RoomListCComponent,
+    MealListCComponent,
+    ExtraListCComponent
 
 
   ],
