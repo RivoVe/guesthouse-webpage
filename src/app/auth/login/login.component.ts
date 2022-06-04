@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/models/user';
+import { Login } from 'src/app/shared/models/login';
+import { LoginService } from 'src/app/shared/services/loginService';
 import { UserService } from 'src/app/shared/services/userService';
 
 @Component({
@@ -12,24 +14,34 @@ import { UserService } from 'src/app/shared/services/userService';
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService,
+    private loginService: LoginService, private snackBar: MatSnackBar) {
   }
 
-  user: User = new User();
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:[''],
-      password:['']
+      email:'',
+      password:''
     })
   }
 
   login (){
-    console.log(this.user)
-    this.userService.loginUser(this.user).subscribe(data=>{
-      alert("Login successful!")
-      this.router.navigateByUrl('');
-    }, error=> alert ("Please enter correct email and password"));
+    const login = new Login(this.loginForm.get('email')?.value, this.loginForm.get("password")?.value);
+    this.loginService.validateLogin(login).subscribe(
+      value => {
+        console.log(value);
+        alert("Login successful!");
+        this.loginForm.reset();
+        this.router.navigateByUrl('');
+      },
+      error => {
+        this.snackBar.open(error.error.message + error.error.details[0], 'Close', {
+        duration: 6000,
+        panelClass: 'snack-error-message'
+      });
+      }
+    );
   }
 
 }

@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -49,6 +48,7 @@ import { CommonModule } from '@angular/common';
 import { RoomListCComponent } from './room/room-list-c/room-list-c.component';
 import { MealListCComponent } from './meal/meal-list-c/meal-list-c.component';
 import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -56,7 +56,6 @@ import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.componen
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     SignupComponent,
     HomeComponent,
     HeaderComponent,
@@ -103,7 +102,8 @@ import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.componen
     MatListModule,
     NgbModule,
     MatSnackBarModule,
-    CommonModule
+    CommonModule,
+    RouterModule
 
     ],
   providers: [],

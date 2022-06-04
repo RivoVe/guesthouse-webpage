@@ -1,11 +1,11 @@
 <div class="center-all">
   <div class="elem-group inlined">
     <h1>Login!</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <form [formGroup]="loginForm" >
 
     <div class="elem-group">
       <label>Your E-mail *</label>
-      <input formControlName="email" type="email"  name="email" placeholder="mari.matsu@email.com" >
+      <input formControlName="email" type="email"  name="email" placeholder="yourEmail@email.com" >
     </div>
 
     <div class="elem-group">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="elem-group">
-      <button class="button" type="submit">Login!
+      <button class="button" (click)="login()">Login!
       </button>
     </div>
     <a style="color:blue; margin-top: 20px" routerLink="/signup"> New here? Click here to sign up!</a>
