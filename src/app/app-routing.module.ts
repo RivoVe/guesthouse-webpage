@@ -18,6 +18,10 @@ import { MealDetailsComponent } from './meal/meal-details/meal-details.component
 import { UpdateMealComponent } from './meal/update-meal/update-meal.component';
 import { BookingListComponent } from './booking/booking-list/booking-list.component';
 import { BookingDetailsComponent } from './booking/booking-details/booking-details.component';
+import { RoomListCComponent } from './room/room-list-c/room-list-c.component';
+import { MealListCComponent } from './meal/meal-list-c/meal-list-c.component';
+import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.component';
+
 
 
 
@@ -33,14 +37,21 @@ const routes: Routes = [
   { path: 'meals/:id', component: MealDetailsComponent },
   { path: 'addMeal', component: AddMealComponent},
   { path: 'updateMeal/:id', component: UpdateMealComponent },
+  { path: 'mealsc', component: MealListCComponent },
   { path: 'rooms', component: RoomListComponent },
   { path: 'rooms/:id', component: RoomDetailsComponent },
   { path: 'addRoom', component: AddRoomComponent },
   { path: 'updateRoom/:id', component: UpdateRoomComponent },
+  { path: 'roomsc', component: RoomListCComponent },
   { path: 'extras', component: ExtraListComponent },
   { path: 'extras/:id', component: ExtraDetailsComponent },
   { path: 'addExtra', component: AddExtraComponent },
-  { path: 'updateExtra/:id', component: UpdateExtraComponent }
+  { path: 'updateExtra/:id', component: UpdateExtraComponent },
+  { path: 'extrasc', component: ExtraListCComponent },
+  
+  
+  
+
 
 ];
 

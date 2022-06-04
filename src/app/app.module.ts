@@ -44,6 +44,10 @@ import { BookingDetailsComponent } from './booking/booking-details/booking-detai
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './auth/login/login.component';
+import { CommonModule } from '@angular/common';
+import { RoomListCComponent } from './room/room-list-c/room-list-c.component';
+import { MealListCComponent } from './meal/meal-list-c/meal-list-c.component';
+import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.component';
 import { RouterModule } from '@angular/router';
 import { HideForRolesDirective } from './directives/hideForRoles.directive';
 
@@ -77,6 +81,7 @@ import { HideForRolesDirective } from './directives/hideForRoles.directive';
     LoginComponent,
     HideForRolesDirective
 
+
   ],
   imports: [
     BrowserModule,
@@ -98,6 +103,7 @@ import { HideForRolesDirective } from './directives/hideForRoles.directive';
     MatListModule,
     NgbModule,
     MatSnackBarModule,
+    CommonModule,
     RouterModule
 
 
@@ -106,5 +112,6 @@ import { HideForRolesDirective } from './directives/hideForRoles.directive';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class ProductModule { }
 
 

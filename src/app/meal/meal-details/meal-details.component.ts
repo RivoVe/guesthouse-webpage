@@ -16,7 +16,7 @@ export class MealDetailsComponent implements OnInit {
     description: '',
     mealType: '',
     price: 0,
-    mealImages: [],
+    mealImages: '',
     active: true
   }
 
