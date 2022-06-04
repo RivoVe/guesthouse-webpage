@@ -12,12 +12,12 @@
         </div>
       </div>
     </div>
-  
-    <div class="elem-group">
+
+    <div *appHideForRoles="['user']" class="elem-group"> <!-- REMOVE to see in localhost *appHideForRoles="['user']" -->>
       <button class="nupp1"  routerLink ="/addExtra">Add Extra
       </button>
     </div>
-  
+
     <h1>Extras List:</h1>
     <div class="col-md-6 col-md-8 elem-group inlined">
         <ul class="list-group">
@@ -30,7 +30,7 @@
           </li>
         </ul>
       </div>
-  
+
     <div class="col-md-6 elem-group inlined">
         <app-extra-details
           [viewMode]="true"
@@ -38,4 +38,3 @@
         ></app-extra-details>
       </div>
     </div>
-  

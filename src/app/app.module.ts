@@ -45,6 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './auth/login/login.component';
 import { RouterModule } from '@angular/router';
+import { HideForRolesDirective } from './directives/hideForRoles.directive';
+
 
 
 
@@ -72,7 +74,8 @@ import { RouterModule } from '@angular/router';
     UpdateMealComponent,
     BookingListComponent,
     BookingDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    HideForRolesDirective
 
   ],
   imports: [
@@ -96,6 +99,7 @@ import { RouterModule } from '@angular/router';
     NgbModule,
     MatSnackBarModule,
     RouterModule
+
 
     ],
   providers: [],
