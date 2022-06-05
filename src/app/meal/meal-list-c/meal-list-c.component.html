@@ -1,8 +1,9 @@
+<div class="sky">
 <div class="page">
     <div class="content" role="main">
         <div class="row">
             <div class="col-md-6 col-sm-6 hotell" *ngFor="let meal of Mealslist"><br>
-                <img (click)="getMealSlide(meal.id)" class="img-responsive img-thumbnail imgclass" src="{{meal.roomImages}}"><br>
+                <img (click)="getMealSlide(meal.id)" class="img-responsive img-thumbnail imgclass" src="{{meal.mealImages}}"><br>
                 <h1 class="room-name">{{meal.name}}</h1>
                 <h3 class="description">{{meal.description}}</h3>
                 <h3 class="price-right">Price: {{meal.price | currency:'EUR'}}</h3>
@@ -43,3 +44,4 @@
           </form>
         </div>    
     </ng-template>
+  </div>

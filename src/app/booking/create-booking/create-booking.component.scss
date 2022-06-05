@@ -1,8 +1,12 @@
 div.overall {
-  margin: 250px;
-  background-color: whitesmoke;
-
+  padding: 3.0555555555555554em 15px;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+background-color: whitesmoke;
 }
+
+
 
 body {
   width: 500px;
@@ -17,7 +21,6 @@ div.elem-group {
 div.elem-group.inlined {
   width: 49%;
   display: inline-block;
-  float: left;
   margin-left: 1%;
 }
 

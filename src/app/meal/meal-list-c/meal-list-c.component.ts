@@ -19,6 +19,8 @@ export class MealListCComponent implements OnInit {
   constructor(
     private mealService: MealService,
     private modalService: NgbModal,
+    private httpclient: HttpClient,
+    private route: ActivatedRoute,
     private router: Router) {
       this.getAllMeals();
      }
