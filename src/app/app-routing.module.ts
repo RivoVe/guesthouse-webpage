@@ -25,11 +25,11 @@ import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.componen
 
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-
   { path: 'booking', component: CreateBookingComponent},
   { path: 'bookings', component: BookingListComponent},
   { path: 'bookings/:id', component: BookingDetailsComponent},

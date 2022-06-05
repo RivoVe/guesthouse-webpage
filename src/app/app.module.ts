@@ -49,6 +49,8 @@ import { RoomListCComponent } from './room/room-list-c/room-list-c.component';
 import { MealListCComponent } from './meal/meal-list-c/meal-list-c.component';
 import { ExtraListCComponent } from './extras/extra-list-c/extra-list-c.component';
 import { RouterModule } from '@angular/router';
+import { HideForRolesDirective } from './directives/hideForRoles.directive';
+
 
 
 
@@ -77,9 +79,11 @@ import { RouterModule } from '@angular/router';
     BookingListComponent,
     BookingDetailsComponent,
     LoginComponent,
+    HideForRolesDirective,
     RoomListCComponent,
     MealListCComponent,
     ExtraListCComponent
+
 
   ],
   imports: [
@@ -104,6 +108,7 @@ import { RouterModule } from '@angular/router';
     MatSnackBarModule,
     CommonModule,
     RouterModule
+
 
     ],
   providers: [],

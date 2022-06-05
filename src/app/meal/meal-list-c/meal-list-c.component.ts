@@ -14,8 +14,6 @@ export class MealListCComponent implements OnInit {
   Imagelist: any;
 
   @ViewChild('content') addview !: ElementRef;
-  
-
   constructor(
     private mealService: MealService,
     private modalService: NgbModal,
@@ -37,13 +35,13 @@ export class MealListCComponent implements OnInit {
       })
       this.open();
     }
-  
+
   open() {
       this.modalService.open(this.addview, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       }, (reason) => {
       });
     }
-  
+
     private getDismissReason(reason: any): string {
       if (reason === ModalDismissReasons.ESC) {
         return 'by pressing ESC';
@@ -56,14 +54,6 @@ export class MealListCComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
-  
 
   ngOnInit(): void {
   }

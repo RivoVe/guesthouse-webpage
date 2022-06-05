@@ -67,7 +67,7 @@ export class RoomListComponent implements OnInit {
         this.retrieveRooms();
       });
     }
-    
+
   }
 
   ProceedUpload(){
@@ -124,5 +124,5 @@ export class RoomListComponent implements OnInit {
     };
   }
 
-   
+
 }

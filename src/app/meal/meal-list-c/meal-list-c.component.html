@@ -11,21 +11,21 @@
                     <div fxFlex fxLayoutAlign="flex-end">
                         <button class="book-now-button" mat-stroked-button color="primary" [routerLink]="'/booking'" >
                             Order Now
-                        </button>        
+                        </button>
                     </div>
                 </div>
-    
-    
+
+
             </div>
         </div>
-    
-        
+
+
     </div>
     </div>
-    
-    
+
+
     <ng-template #content let-modal>
-      
+
         <div class="modal-body">
           <form>
             <ngb-carousel>
@@ -37,10 +37,10 @@
                     <h3>{{meal.name}}</h3>
                     <p>{{meal.price | currency:'EUR'}}</p>
                   </div>
-                            
+
                 </ng-template>
               </ngb-carousel>
-                    
+
           </form>
         </div>    
     </ng-template>
