@@ -11,6 +11,22 @@
         <mat-icon>hotel</mat-icon>
         <span>Home</span>
     </a>
+    <a mat-list-item routerLink="/roomsc" (click)="onToggleClose()">
+        <mat-icon>room</mat-icon>
+        <span>Rooms</span>
+    </a>
+    <a mat-list-item routerLink="/mealsc" (click)="onToggleClose()">
+        <mat-icon>fastfood</mat-icon>
+        <span>Meals</span>
+    </a>
+    <a mat-list-item routerLink="/extrasc" (click)="onToggleClose()">
+        <mat-icon>star_border</mat-icon>
+        <span>Extras</span>
+    </a>
+<br>
+<br>
+<br>
+    <a class="admin-button">Admin buttons</a>
     <a mat-list-item routerLink="/rooms" (click)="onToggleClose()">
         <mat-icon>build</mat-icon>
         <span>Rooms Control</span>
@@ -25,3 +41,4 @@
     </a>
 
 </mat-nav-list>
+
